@@ -77,4 +77,4 @@ class MusicBrainzAPI(WebServiceAPI):
     pass
 
 if __name__ == '__main__':
-    app.run(port=2000)
+    app.run(port=19048)
