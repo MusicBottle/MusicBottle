@@ -9,12 +9,15 @@ import urlparse
 import json
 import pymongo
 
+# Debugging stuff
 from Pymo.pymo import pymo
 from pprint import pformat, pprint
 
+# Flask imports
 from flask import Flask, request
 from flaskext.babel import Babel
 
+# Setup Flask
 app = Flask(__name__)
 # @TODO: Replace with proper configuration storage.
 app.config['DEBUG'] = True
