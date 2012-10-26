@@ -1,0 +1,3 @@
+[submodule "Pymo"]
+	path = Pymo
+	url = https://github.com/threewestwinds/Pymo.git
