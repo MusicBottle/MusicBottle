@@ -4,6 +4,8 @@
 
 MusicBrainz entity classes for MusicBottle.
 """
+import json
+from WebServiceAPIs import *
 
 class MusicBrainzEntity(object):
     """Parent class for all MusicBrainz entities."""
@@ -12,7 +14,12 @@ class MusicBrainzEntity(object):
 
 class Artist(MusicBrainzEntity):
     """"""
+    def __init__(self, mbid):
+        self.mbid = mbid
+        self.data = self.fetch_data(mbid)
 
-    def output(self):
+    def fetch_data(self, mbid):
         mb_api = MusicBrainzAPI()
-        return mb_api.call('https://musicbrainz.org/ws/2/artist/'+self.mbid+'?inc=aliases+u&fmt=json')
+        json_data = mb_api.call('https://musicbrainz.org/ws/2/artist/'+mbid+
+                                '?inc=aliases&fmt=json').read()
+        return json.loads(json_data)
