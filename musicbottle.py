@@ -10,7 +10,12 @@ import json
 #import pymongo
 
 # Debugging stuff
-from Pymo.pymo import pymo
+from platform import python_version_tuple
+py_version = python_version_tuple()
+if int(py_version[0]) < 3 and int(py_version[1]) < 7:
+    from pprint import pformat as debug
+else:
+    from Pymo.pymo import pymo as debug
 
 # Flask imports
 from flask import Flask, request
@@ -31,8 +36,8 @@ def musicbottle_artist(artist_mbid):
     artist = Artist(artist_mbid)
     response = artist.output()
     data = json.loads(response.read())
-    pymodata = pymo(data)
-    return '<h1>'+data['name']+'</h1>'+pymodata
+    debug_data = debug(data)
+    return '<h1>'+data['name']+'</h1>'+debug_data
 
 class MusicBrainzEntity(object):
     """Parent class for all MusicBrainz entities."""
