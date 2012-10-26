@@ -5,9 +5,9 @@
 The MusicBottle website.
 """
 import urllib2
-import urlparse
+#import urlparse
 import json
-import pymongo
+#import pymongo
 
 # Debugging stuff
 from Pymo.pymo import pymo
