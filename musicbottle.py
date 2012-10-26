@@ -4,10 +4,10 @@
 
 The MusicBottle website.
 """
-import urllib2
-#import urlparse
 import json
-#import pymongo
+
+from modules.WebServiceAPIs import *
+from modules.MusicBrainzEntities import *
 
 # Debugging stuff
 from platform import python_version_tuple
@@ -38,43 +38,6 @@ def musicbottle_artist(artist_mbid):
     data = json.loads(response.read())
     debug_data = debug(data)
     return '<h1>'+data['name']+'</h1>'+debug_data
-
-class MusicBrainzEntity(object):
-    """Parent class for all MusicBrainz entities."""
-    def __init__(self, mbid):
-        self.mbid = mbid
-
-class Artist(MusicBrainzEntity):
-    """"""
-
-    def output(self):
-        mb_api = MusicBrainzAPI()
-        return mb_api.call('https://musicbrainz.org/ws/2/artist/'+self.mbid+'?inc=aliases&fmt=json')
-
-class WebServiceAPI(object):
-    """What do we want to know?
-    - Is the site available via HTTP, HTTPS, something else?
-    - What kind of data does it return (JSON, XML, ...)?
-    - """
-    def __init__(self): pass
-
-    
-    def create_request_url():
-        """Placeholder function."""
-        pass
-
-    def call(self, url):
-        return urllib2.urlopen(url)
-
-class MediaWikiAPI(WebServiceAPI):
-    """Parent class for MediaWiki based sites."""
-    pass
-
-class WikipediaAPI(MediaWikiAPI):
-    pass
-
-class MusicBrainzAPI(WebServiceAPI):
-    pass
 
 if __name__ == '__main__':
     app.run(port=19048)
