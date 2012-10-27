@@ -1,0 +1,19 @@
+First obtain latest sources:
+
+  git clone https://github.com/Freso/MusicBottle.git
+
+Enter the directory:
+
+  cd MusicBottle
+
+Create a virtual environment and install dependencies:
+
+  virtualenv venv
+  . venv/bin/activate
+  pip install Flask Flask-Babel pymongo
+
+Run the script:
+
+  python musicbottle.py
+
+If the above gives an error, try to use "python2" instead of "python".
