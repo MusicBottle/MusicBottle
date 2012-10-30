@@ -28,7 +28,7 @@ babel = Babel(app)
 
 @app.route('/')
 def musicbottle_welcome():
-    return render_template('hello.html')
+    return render_template('index.html')
 
 @app.route('/artist/<artist_mbid>')
 def musicbottle_artist(artist_mbid):
