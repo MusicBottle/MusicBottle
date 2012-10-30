@@ -1,43 +1,41 @@
-
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-	
+
 {# make a "name" variable #}
 {% set name=artist.data['name'] %}
 
 <head>
-	<title>MusicBrainz Artist: {{ name }}</title>
-	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
-	<meta name="generator" content="Geany 1.22" />
-	<style>
-		div {
-			border:1px solid grey;
-			padding:1em;
-			margin:10px;
-			}
-	</style>
+    <title>MusicBrainz Artist: {{ name }}</title>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+    <meta name="generator" content="Geany 1.22" />
+    <style>
+        div {
+            border:1px solid grey;
+            padding:1em;
+            margin:10px;
+        }
+    </style>
 </head>
 
 <body>
-	<div id="header"><h1>A Basic Bottled Artist</h1></div>
-	 <div id="content"><h2>{{name}} &mdash;<span style="font-size:smaller">{{artist.data['disambiguation']}}</span></h2> 
-		<p>Coming soon: lots of crap about {{name}}!</p>
-	</div>
-	<div id="degug">
-	  <p>For the purposes of debugging, here's a dump of artist.data:</p>
-	  <p>{{artist.data}}</p>
-	  <p> And here are the values in list form:</p>
-	  <ul style="list-style-type:none;">{% for v in artist.data.values() %}
-			<li>{{v}}</li>
-			
-			{% endfor %}</ul>
-	</div>
-	<div id="footer">
-		<p>&copy;2012</p>
-	</div>
-
+    <div id="header"><h1>A Basic Bottled Artist</h1></div>
+    <div id="content"><h2>{{name}} &mdash;<span style="font-size:smaller">{{artist.data['disambiguation']}}</span></h2>
+        <p>Coming soon: lots of crap about {{name}}!</p>
+    </div>
+    <div id="degug">
+        <p>For the purposes of debugging, here's a dump of artist.data:</p>
+        <p>{{artist.data}}</p>
+        <p> And here are the values in list form:</p>
+        <ul style="list-style-type:none;">
+            {% for v in artist.data.values() %}
+                <li>{{v}}</li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div id="footer">
+        <p>&copy;2012</p>
+    </div>
 </body>
 
 </html>
