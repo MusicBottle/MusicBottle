@@ -23,6 +23,8 @@ from flaskext.babel import Babel
 # Setup Flask
 app = Flask(__name__)
 # @TODO: Replace with proper configuration storage.
+# @TODO: Add configuration for MusicBrainz server to query
+# @TODO: Add configuration for fanart.tv API key
 app.config['DEBUG'] = True
 babel = Babel(app)
 
