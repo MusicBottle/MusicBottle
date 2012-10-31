@@ -38,5 +38,3 @@ def musicbottle_artist(artist_mbid):
     debug_data = debug(artist.data)
     return render_template('artist.html', artist=artist)
 
-if __name__ == '__main__':
-    app.run(port=19048)
