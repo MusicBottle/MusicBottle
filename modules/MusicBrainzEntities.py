@@ -21,5 +21,5 @@ class Artist(MusicBrainzEntity):
     def fetch_data(self, mbid):
         mb_api = MusicBrainzAPI()
         json_data = mb_api.call('https://musicbrainz.org/ws/2/artist/'+mbid+
-                                '?inc=aliases&fmt=json').read()
+                                '?inc=aliases+url-rels&fmt=json').read()
         return json.loads(json_data)
