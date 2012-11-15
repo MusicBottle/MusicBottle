@@ -28,7 +28,6 @@ app = Flask(__name__)
 app.config.from_object('musicbottle.default_settings')
 if getenv('MUSICBOTTLE_SETTINGS') is not None:
     app.config.from_envvar('MUSICBOTTLE_SETTINGS')
-print app.config
 
 @app.route('/')
 def musicbottle_welcome():
