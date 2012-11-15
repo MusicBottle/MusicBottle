@@ -5,6 +5,11 @@
 The MusicBottle website.
 """
 
+# Flask imports
+from flask import Flask, request, render_template
+from flaskext.babel import Babel
+
+# MusicBottle imports
 from modules.MusicBrainzEntities import *
 
 # Debugging stuff
@@ -15,10 +20,6 @@ if int(py_version[0]) < 3 and int(py_version[1]) < 7:
     from pprint import pformat as debug
 else:
     from Pymo.pymo import pymo as debug
-
-# Flask imports
-from flask import Flask, request, render_template
-from flaskext.babel import Babel
 
 # Setup Flask
 app = Flask(__name__)
