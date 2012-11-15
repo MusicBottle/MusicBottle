@@ -5,6 +5,9 @@
 The MusicBottle website.
 """
 
+# Regular Python imports
+from os import getenv
+
 # Flask imports
 from flask import Flask, request, render_template
 
@@ -22,10 +25,10 @@ else:
 
 # Setup Flask
 app = Flask(__name__)
-# @TODO: Replace with proper configuration storage.
-# @TODO: Add configuration for MusicBrainz server to query
-# @TODO: Add configuration for fanart.tv API key
-app.config['DEBUG'] = True
+app.config.from_object('musicbottle.default_settings')
+if getenv('MUSICBOTTLE_SETTINGS') is not None:
+    app.config.from_envvar('MUSICBOTTLE_SETTINGS')
+print app.config
 
 @app.route('/')
 def musicbottle_welcome():
@@ -36,4 +39,3 @@ def musicbottle_artist(artist_mbid):
     artist = Artist(artist_mbid)
     debug_data = debug(artist.data)
     return render_template('artist.html', artist=artist)
-
