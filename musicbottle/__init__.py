@@ -7,7 +7,6 @@ The MusicBottle website.
 
 # Flask imports
 from flask import Flask, request, render_template
-from flaskext.babel import Babel
 
 # MusicBottle imports
 from modules.MusicBrainzEntities import *
@@ -27,7 +26,6 @@ app = Flask(__name__)
 # @TODO: Add configuration for MusicBrainz server to query
 # @TODO: Add configuration for fanart.tv API key
 app.config['DEBUG'] = True
-babel = Babel(app)
 
 @app.route('/')
 def musicbottle_welcome():
