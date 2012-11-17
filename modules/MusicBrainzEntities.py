@@ -20,7 +20,6 @@ class Artist(MusicBrainzEntity):
         self.data = self.fetch_data(mbid, mb_server)
 
     def fetch_data(self, mbid, mb_server):
-        print mb_server
         mb_api = MusicBrainzAPI('artist/'+mbid+'?inc=aliases+url-rels&fmt=json',
                                 mb_server)
         json_data = mb_api.response.read()
