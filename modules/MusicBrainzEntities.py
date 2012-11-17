@@ -14,12 +14,14 @@ class MusicBrainzEntity(object):
 
 class Artist(MusicBrainzEntity):
     """"""
-    def __init__(self, mbid):
+    def __init__(self, mbid, mb_server = 'http://musicbrainz.org'):
         self.mbid = mbid
-        self.data = self.fetch_data(mbid)
+        self.mb_server = mb_server
+        self.data = self.fetch_data(mbid, mb_server)
 
-    def fetch_data(self, mbid):
-        mb_api = MusicBrainzAPI()
-        json_data = mb_api.call('https://musicbrainz.org/ws/2/artist/'+mbid+
-                                '?inc=aliases+url-rels&fmt=json').read()
+    def fetch_data(self, mbid, mb_server):
+        print mb_server
+        mb_api = MusicBrainzAPI('artist/'+mbid+'?inc=aliases+url-rels&fmt=json',
+                                mb_server)
+        json_data = mb_api.response.read()
         return json.loads(json_data)

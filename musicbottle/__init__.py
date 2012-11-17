@@ -35,6 +35,6 @@ def musicbottle_welcome():
 
 @app.route('/artist/<artist_mbid>')
 def musicbottle_artist(artist_mbid):
-    artist = Artist(artist_mbid)
+    artist = Artist(artist_mbid, app.config['MUSICBRAINZ_SERVER'])
     debug_data = debug(artist.data)
     return render_template('artist.html', artist=artist)

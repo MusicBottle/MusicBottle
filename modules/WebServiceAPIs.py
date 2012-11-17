@@ -26,4 +26,8 @@ class WikipediaAPI(MediaWikiAPI):
     pass
 
 class MusicBrainzAPI(WebServiceAPI):
-    pass
+    def __init__(self, request, server = 'http://musicbrainz.org'):
+        self.server = server
+        self.request = request
+        self.request_url = server + '/ws/2/' + request
+        self.response = self.call(self.request_url)
