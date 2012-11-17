@@ -24,14 +24,16 @@
         <p>Coming soon: lots of crap about {{name}}!</p>
     </div>
     <div id="degug">
-        <p>For the purposes of debugging, here's a dump of artist.data:</p>
-        <p>{{artist.data}}</p>
-        <p> And here are the values in list form:</p>
-        <ul style="list-style-type:none;">
-            {% for v in artist.data.values() %}
-                <li>{{v}}</li>
+        <h3>Debug information</h3>
+        <h4>Dump as defintion list</h4>
+        <dl>
+            {% for v in artist.data %}
+                <dt>{{v}}</dt>
+                    <dd>{{artist.data[v]}}</dd>
             {% endfor %}
-        </ul>
+        </dl>
+        <h4>Raw dump of artist.data</h4>
+        <p>{{artist.data}}</p>
     </div>
     <div id="footer">
         <p>&copy;2012</p>
