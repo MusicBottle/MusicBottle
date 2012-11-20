@@ -10,10 +10,10 @@ Create a virtual environment and install dependencies:
 
   virtualenv venv
   . venv/bin/activate
-  pip install Flask Flask-Babel pymongo
+  pip install Flask Flask-Babel pymongo Flask-Script
 
-Run the script:
+Run the server:
 
-  python musicbottle.py
+  python manage.py runserver
 
 If the above gives an error, try to use "python2" instead of "python".
