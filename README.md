@@ -1,3 +1,13 @@
+Basic MusicBottle documentation
+===============================
+
+MusicBottle is meant as a way to display data from MusicBrainz' webservice in a
+more presentable format than what MusicBrainz itself can achieve while catering
+to its most importants users' - the editors' - workflow of editing the data.
+
+See more about the project at our WikiPage:
+https://wiki.musicbrainz.org/MusicBottle
+
 Installing MusicBottle
 ----------------------
 
