@@ -28,8 +28,8 @@ def musicbottle_welcome():
 def musicbottle_artist(artist_mbid):
     artist = Artist(artist_mbid, app.config['MUSICBRAINZ_SERVER'])
     return render_template('artist.html', artist=artist)
-    
+
 @app.route('/release/<release_mbid>')
 def musicbottle_release(release_mbid):
     release = Release(release_mbid, app.config['MUSICBRAINZ_SERVER'])
-    return render_template('release.html', release=release)   
+    return render_template('release.html', release=release)

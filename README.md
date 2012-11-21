@@ -23,14 +23,14 @@ Run the server:
 <i><dl>
 <dd>python manage.py runserver</dd>
 </dl></i>
-  
+
 If the above gives an error, try to use "python2" instead of "python".
 
 Finally, in a web browser, navigate to:
 <i><dl>
 <dd>http://localhost:19048</dd>
 </dl></i>
-  
+
 ---
 
 **Note 1**
