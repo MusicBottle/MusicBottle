@@ -1,12 +1,10 @@
 Installing MusicBottle
 ----------------------
 
-First obtain latest sources, and initialize the Pymo submodule:
+First obtain latest sources:
 
 <i><dl>
 <dd>git clone https://github.com/Freso/MusicBottle.git</dd>
-<dd>git submodule init</dd>
-<dd>git submodule update</dd>
 </dl></i>
 
 This will create a directory "MusicBottle". Navigate to it:
