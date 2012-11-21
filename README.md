@@ -22,7 +22,7 @@ This will create a directory "MusicBottle". Navigate to it:
 Create a virtual environment *(Note 1)* and install dependencies:
 
     virtualenv venv
-    . venv/bin/activate</dd>
+    . venv/bin/activate
     pip install Flask Flask-Babel pymongo Flask-Script
 
 Run the server:
