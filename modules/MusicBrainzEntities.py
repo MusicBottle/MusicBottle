@@ -18,9 +18,28 @@ class Artist(MusicBrainzEntity):
         self.mbid = mbid
         self.mb_server = mb_server
         self.data = self.fetch_data(mbid, mb_server)
+        self.releases = self.fetch_releases(mbid, mb_server)
 
     def fetch_data(self, mbid, mb_server):
-        mb_api = MusicBrainzAPI('artist/'+mbid+'?inc=aliases+url-rels&fmt=json',
+        mb_api = MusicBrainzAPI('artist/'+mbid+'?inc=aliases+url-rels+releases&fmt=json',
+                                mb_server)
+        json_data = mb_api.response.read()
+        return json.loads(json_data)
+    
+    def fetch_releases(self, mbid, mb_server):
+        mb_api = MusicBrainzAPI('release?artist='+mbid+'&status=official&type=album&fmt=json',mb_server)
+        json_data = mb_api.response.read()
+        return json.loads(json_data)
+        
+class Release(MusicBrainzEntity):
+    """"""
+    def __init__(self, mbid, mb_server = 'http://musicbrainz.org'):
+        self.mbid = mbid
+        self.mb_server = mb_server
+        self.data = self.fetch_data(mbid, mb_server)
+
+    def fetch_data(self, mbid, mb_server):
+        mb_api = MusicBrainzAPI('release/'+mbid+'?inc=artists+labels&fmt=json',
                                 mb_server)
         json_data = mb_api.response.read()
         return json.loads(json_data)

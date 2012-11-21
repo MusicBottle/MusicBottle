@@ -20,10 +20,33 @@
 
 <body>
     <div id="header"><h1>A Basic Bottled Artist</h1></div>
-    <div id="content"><h2>{{name}} &mdash;<span style="font-size:smaller">{{artist.data['disambiguation']}}</span></h2>
+    <div id="content">
+        <h2>{{name}} &mdash;<span style="font-size:smaller">{{artist.data['disambiguation']}}</span></h2>
+        Number of official album releases: {{artist.releases['release-count']}}
         <p>Coming soon: lots of crap about {{name}}!</p>
+        <table>
+            <tr>
+            {% set i = 0 %} {# This would probably be better in JS #}
+            {% for a in artist.releases['releases'] %}
+                {% set i = i + 1 %}
+                {% if i > 10 %}
+                    {% set i = 1 %}
+                    </tr>
+                    <tr>
+                {% endif %}
+            
+                <td>
+                    <a href="../release/{{a.id}}">
+                    <img style="display:inline; margin-left:auto; margin-right:auto;" src="http://coverartarchive.org/release/{{a.id}}/front-250" width="100" height="100" alt="{{a.title}} Cover"></img>
+                    </a>
+                    </br>
+                    <span style="width:100px">{{a.title}}<span>
+               </td>
+            {% endfor %}
+            </tr>
+        </table>
     </div>
-    <div id="degug">
+    <div id="debug">
         <h3>Debug information</h3>
         <h4>Dump as defintion list</h4>
         <dl>
