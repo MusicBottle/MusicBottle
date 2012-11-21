@@ -1,9 +1,10 @@
 Basic MusicBottle documentation
 ===============================
 
-MusicBottle is meant as a way to display data from MusicBrainz' webservice in a
-more presentable format than what MusicBrainz itself can achieve while catering
-to its most importants users' - the editors' - workflow of editing the data.
+MusicBottle is a web application which aims to display MusicBrainz data in a
+more presentable format that the MusicBrainz website does. MusicBrainz must
+allow for both viewing and editing of data and because of this data isn't
+always displayed in the clearest way.
 
 See more about the project at our WikiPage:
 https://wiki.musicbrainz.org/MusicBottle
@@ -31,7 +32,7 @@ virtual environment:
 
 Install dependencies:
 
-    pip install Flask Flask-Babel pymongo Flask-Script
+    pip install Flask Flask-Babel pymongo Flask-Script pyyaml nltk
 
 Running MusicBottle
 -------------------

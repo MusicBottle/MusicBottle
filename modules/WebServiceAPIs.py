@@ -23,7 +23,11 @@ class MediaWikiAPI(WebServiceAPI):
     pass
 
 class WikipediaAPI(MediaWikiAPI):
-    pass
+    def __init__(self, request, server):
+        self.server = server
+        self.request = request
+        self.request_url = server + '/w/api.php?' + request
+        self.response = self.call(self.request_url)
 
 class MusicBrainzAPI(WebServiceAPI):
     def __init__(self, request, server = 'http://musicbrainz.org'):

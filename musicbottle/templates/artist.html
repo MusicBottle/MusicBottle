@@ -24,7 +24,7 @@
     <div id="content">
         <h2>{{name}} &mdash;<span style="font-size:smaller">{{artist.data['disambiguation']}}</span></h2>
         Number of official album releases: {{artist.releases['release-count']}}
-        <p>Coming soon: lots of crap about {{name}}!</p>
+        <p>{{ artist.wikipedia }}</p>
         <table style="width:100%;">
             <tr>
             {% set i = 0 %} {# This would probably be better in JS #}
