@@ -14,15 +14,6 @@ from flask import Flask, request, render_template
 # MusicBottle imports
 from modules.MusicBrainzEntities import *
 
-# Debugging stuff
-from platform import python_version_tuple
-py_version = python_version_tuple()
-
-if int(py_version[0]) < 3 and int(py_version[1]) < 7:
-    from pprint import pformat as debug
-else:
-    from Pymo.pymo import pymo as debug
-
 # Setup Flask
 app = Flask(__name__)
 app.config.from_object('musicbottle.default_settings')
@@ -36,11 +27,9 @@ def musicbottle_welcome():
 @app.route('/artist/<artist_mbid>')
 def musicbottle_artist(artist_mbid):
     artist = Artist(artist_mbid, app.config['MUSICBRAINZ_SERVER'])
-    #debug_data = debug(artist.data)
     return render_template('artist.html', artist=artist)
-    
+
 @app.route('/release/<release_mbid>')
 def musicbottle_release(release_mbid):
     release = Release(release_mbid, app.config['MUSICBRAINZ_SERVER'])
-    #debug_data = debug(release.data)
-    return render_template('release.html', release=release)   
+    return render_template('release.html', release=release)

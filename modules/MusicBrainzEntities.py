@@ -45,7 +45,7 @@ class Artist(MusicBrainzEntity):
         mb_api = MusicBrainzAPI('release?artist='+mbid+'&status=official&type=album&fmt=json',mb_server)
         json_data = mb_api.response.read()
         return json.loads(json_data)
-        
+
 class Release(MusicBrainzEntity):
     """"""
     def __init__(self, mbid, mb_server = 'http://musicbrainz.org'):
