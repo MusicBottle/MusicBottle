@@ -46,6 +46,13 @@ the default.
 
 If the commands above give errors, try using `python2` instead of `python`.
 
+Configuring MusicBottle
+-----------------------
+
+If you want to configure MusicBottle settings, copy
+`musicbottle/default_settings.py` somewhere, edit it and set the environment
+variable `MUSICBOTTLE_SETTINGS` to point to the edited file.
+
 Accessing MusicBottle
 ---------------------
 
