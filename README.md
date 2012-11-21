@@ -11,34 +11,42 @@ https://wiki.musicbrainz.org/MusicBottle
 Installing MusicBottle
 ----------------------
 
-First obtain latest sources:
+Make sure you have a reasonably recent Python 2 installed. We're working with
+compatibility for Python >= 2.6.3. It's recommended to use `pip` and
+`virtualenv` for dependencies. `virtualenv` is available as a package in most
+distributions, e.g. as `python-virtualenv` in Ubuntu and Debian and
+`python2-virtualenv` in ArchLinux. Installing this should also pull in Python 2
+and PIP.
+
+Obtain the latest sources and navigate to them:
 
     git clone https://github.com/Freso/MusicBottle.git
-
-This will create a directory "MusicBottle". Navigate to it:
-
     cd MusicBottle
 
-Create a virtual environment *(Note 1)* and install dependencies:
+If you decided to go with with using `virtualenv`, now is a good time to make a
+virtual environment:
 
     virtualenv venv
     . venv/bin/activate
+
+Install dependencies:
+
     pip install Flask Flask-Babel pymongo Flask-Script
 
-Run the server:
+Running MusicBottle
+-------------------
 
-    python manage.py runserver
+Inside the project directory, run `python manage.py runserver` to start
+the server.
 
-If the above gives an error, try to use `python2` instead of `python`.
+You can run `python manage.py runserver -h` to see a list of options for
+starting the server. E.g., if you need to run it on a different port than
+the default.
 
-Finally, in a web browser, navigate to http://localhost:19048
+If the commands above give errors, try using `python2` instead of `python`.
 
----
+Accessing MusicBottle
+---------------------
 
-**Note 1**
-
-On Debian and Ubuntu Linux:
-
-    sudo apt-get install python-virtualenv
-
-This will also install python and pip.
+Once you have the test server running, you should be able to access it at
+http://127.0.0.1:19048/
