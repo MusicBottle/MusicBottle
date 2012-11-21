@@ -32,7 +32,7 @@ virtual environment:
 
 Install dependencies:
 
-    pip install Flask Flask-Babel pymongo Flask-Script pyyaml nltk
+    pip install Flask Flask-Babel pymongo Flask-Script nltk
 
 Running MusicBottle
 -------------------
