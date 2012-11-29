@@ -20,14 +20,14 @@ class WebServiceAPI(object):
 
 class MediaWikiAPI(WebServiceAPI):
     """Parent class for MediaWiki based sites."""
-    pass
-
-class WikipediaAPI(MediaWikiAPI):
     def __init__(self, request, server):
         self.server = server
         self.request = request
         self.request_url = server + '/w/api.php?' + request
         self.response = self.call(self.request_url)
+
+class WikipediaAPI(MediaWikiAPI):
+    pass
 
 class MusicBrainzAPI(WebServiceAPI):
     def __init__(self, request, server = 'http://musicbrainz.org'):
