@@ -32,7 +32,7 @@ virtual environment:
 
 Install dependencies:
 
-    pip install Flask Flask-Script nltk
+    pip install Flask Flask-Script
 
 Running MusicBottle
 -------------------
