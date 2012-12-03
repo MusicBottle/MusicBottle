@@ -29,7 +29,11 @@ class MusicBrainzEntity(object):
         """Return a JSON-as-HTML formatted representation of the entity data."""
         # Set up replacement "table"
         replacements = (
-            (" ", "&nbsp"),
+            ("&", "&amp;"),
+            ("<", "&lt;"),
+            (">", "&gt;"),
+            ('"', "&quot;"),
+            (" ", "&nbsp;"),
             ("\n", "<br />"),
         )
 
