@@ -25,17 +25,27 @@ class MusicBrainzEntity(object):
     def __init__(self, mbid):
         self.mbid = mbid
 
+    def format_debug_data_json(self, data):
+        """Return a JSON-as-HTML formatted representation of the entity data."""
+        # Set up replacement "table"
+        replacements = (
+            (" ", "&nbsp"),
+            ("\n", "<br />"),
+        )
+
+        # Generate (and return) output
+        output = json.dumps(data, sort_keys=True, indent=4)
+        for old, new in replacements:
+            output = output.replace(old, new)
+        return output
+
 class Artist(MusicBrainzEntity):
     """"""
     def __init__(self, mbid, mb_server = 'http://musicbrainz.org'):
         self.mbid = mbid
         self.mb_server = mb_server
         self.data = self.fetch_data(mbid, mb_server)
-
-        #Get nicely formated json string to print as debug
-        self.data_string = json.dumps(self.data, sort_keys=True, indent=4)
-        self.data_string = self.data_string.replace(" ", "&nbsp")
-        self.data_string = self.data_string.replace("\n", "<br />")
+        self.debug_json = self.format_debug_data_json(self.data)
 
         #First 100 release groups, categorized by secondary type.
         #Eg. compilation+remix = ...groups["+compilation+remix"]
