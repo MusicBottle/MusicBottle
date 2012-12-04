@@ -33,8 +33,6 @@ class MusicBrainzEntity(object):
             ("<", "&lt;"),
             (">", "&gt;"),
             ('"', "&quot;"),
-            (" ", "&nbsp;"),
-            ("\n", "<br />"),
         )
 
         # Generate (and return) output
