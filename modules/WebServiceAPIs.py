@@ -39,11 +39,12 @@ class FanartAPI(WebServiceAPI):
     """
     def __init__(self, entity_type, mbid, apikey = None,
                  type = "all", sort = 1, limit = 2):
-        self.supported_entity_types = ('Artist', 'Album', 'Label')
+        self.supported_entity_types = ('artist', 'album', 'label')
+        self._entity_type = entity_type.lower()
         if apikey is None:
             #@TODO: Print a log message saying FANART_APIKEY isn't set.
             self.response = None
-        elif entity_type not in self.supported_entity_types:
+        elif self._entity_type not in self.supported_entity_types:
             #@TODO: Log that the requested type doesn't exist.
             self.response = None
         else:
@@ -51,7 +52,7 @@ class FanartAPI(WebServiceAPI):
                                 '%{entity_type}s/%{key}s/%{mbid}s/' + \
                                 'json/%{type}s/%{sort}s/%{limit}s/' % \
                                 {
-                                    'entity_type': entity_type.lower(),
+                                    'entity_type': self._entity_type,
                                     'key': apikey,
                                     'mbid': mbid,
                                     'type': type,
