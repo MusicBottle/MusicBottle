@@ -30,8 +30,15 @@ class WikipediaAPI(MediaWikiAPI):
     pass
 
 class FanartAPI(WebServiceAPI):
-    """Class for getting information from fanart.tv."""
-    def __init__(self, entity_type, mbid, apikey = None):
+    """Class for getting information from fanart.tv.
+
+    Mapping is Artist-Artist, Label-Label, Album-Release Group.
+
+    Information about type, sort, and limit can be found in the API:
+    http://fanart.tv/api-docs/music-api/
+    """
+    def __init__(self, entity_type, mbid, apikey = None,
+                 type = "all", sort = 1, limit = 2):
         self.supported_entity_types = ('Artist', 'Album', 'Label')
         if apikey is None:
             #@TODO: Print a log message saying FANART_APIKEY isn't set.
@@ -40,13 +47,18 @@ class FanartAPI(WebServiceAPI):
             #@TODO: Log that the requested type doesn't exist.
             self.response = None
         else:
-            try:
-                from fanart.music import (entity_type)
-                self.response = (entity_type).get(id = mbid)
-            except ImportError:
-                #@TODO: Print a log message saying the "fanart" module isn't
-                #       available.
-                self.response = None
+            self._request_url = 'http://api.fanart.tv/webservice/' + \
+                                '%{entity_type}s/%{key}s/%{mbid}s/' + \
+                                'json/%{type}s/%{sort}s/%{limit}s/' % \
+                                {
+                                    'entity_type': entity_type.lower(),
+                                    'key': apikey,
+                                    'mbid': mbid,
+                                    'type': type,
+                                    'sort': sort,
+                                    'limit': limit,
+                                }
+            self.response = self.call(self._request_url)
 
 class MusicBrainzAPI(WebServiceAPI):
     def __init__(self, request, server = 'http://musicbrainz.org'):
