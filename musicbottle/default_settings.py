@@ -10,3 +10,7 @@ PORT = 19048
 
 # The MusicBrainz server to query. No trailing slash.
 MUSICBRAINZ_SERVER = 'https://musicbrainz.org'
+
+### API keys
+
+FANART_APIKEY = None

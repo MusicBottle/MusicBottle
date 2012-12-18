@@ -43,10 +43,13 @@ class MusicBrainzEntity(object):
 
 class Artist(MusicBrainzEntity):
     """"""
-    def __init__(self, mbid, mb_server = 'http://musicbrainz.org'):
+    def __init__(self, mbid, mb_server = 'http://musicbrainz.org',
+                 apikeys = {}):
         self.mbid = mbid
         self.mb_server = mb_server
-        self.data = self.fetch_data(mbid, mb_server)
+        self.data = self.fetch_data(mbid, self.mb_server)
+        if apikeys['fanart.tv'] is not None:
+            self.data['fanart.tv'] = self.fetch_fanart([mbid], apikeys['fanart.tv'])
         self.debug_json = self.format_debug_data_json(self.data)
 
         #First 100 release groups, categorized by secondary type.
@@ -97,6 +100,14 @@ class Artist(MusicBrainzEntity):
         wikipedia = WikipediaAPI('action=parse&prop=text&format=json&page='+page_name,wp_server)
         json_data = wikipedia.response.read();
         return json.loads(json_data)
+
+    def fetch_fanart(self, mbids, apikey = None):
+        fanart_images = {}
+        for mbid in mbids:
+            result = FanartAPI('artist', mbid, apikey)
+            if result is not None:
+                fanart_images[mbid] = json.loads(result.response.read())
+        return fanart_images
 
     def fetch_releases(self, mbid, mb_server,offset=0):
         mb_api = MusicBrainzAPI('release-group?artist='+mbid+'&type=album&limit=100&offset='+str(offset)+'&fmt=json',mb_server)
