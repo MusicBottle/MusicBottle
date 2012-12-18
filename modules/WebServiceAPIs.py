@@ -32,10 +32,11 @@ class WikipediaAPI(MediaWikiAPI):
 class FanartAPI(WebServiceAPI):
     """Class for getting information from fanart.tv."""
     def __init__(self, entity_type, mbid, apikey = None):
+        self.supported_entity_types = ('Artist', 'Album', 'Label')
         if apikey is None:
             #@TODO: Print a log message saying FANART_APIKEY isn't set.
             self.response = None
-        elif entity_type is not in ['Artist', 'Album', 'Label']:
+        elif entity_type not in self.supported_entity_types:
             #@TODO: Log that the requested type doesn't exist.
             self.response = None
         else:
