@@ -61,6 +61,7 @@ class FanartAPI(WebServiceAPI):
                                     'limit': limit,
                                 }
             self.response = self.call(self._request_url)
+            #@TODO: Catch and log if something goes wrong with the HTTP request.
 
 class MusicBrainzAPI(WebServiceAPI):
     def __init__(self, request, server = 'http://musicbrainz.org'):
