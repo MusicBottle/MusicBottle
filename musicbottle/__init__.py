@@ -26,7 +26,9 @@ def musicbottle_welcome():
 
 @app.route('/artist/<artist_mbid>')
 def musicbottle_artist(artist_mbid):
-    artist = Artist(artist_mbid, app.config['MUSICBRAINZ_SERVER'])
+    artist = Artist(artist_mbid, app.config['MUSICBRAINZ_SERVER'], apikeys = {
+        'fanart.tv': app.config['FANART_APIKEY'],
+    })
     return render_template('artist.html', artist=artist)
 
 @app.route('/release/<release_mbid>')

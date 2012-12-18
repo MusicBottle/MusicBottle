@@ -15,10 +15,13 @@ class MusicBrainzEntity(object):
 
 class Artist(MusicBrainzEntity):
     """"""
-    def __init__(self, mbid, mb_server = 'http://musicbrainz.org'):
+    def __init__(self, mbid, mb_server = 'http://musicbrainz.org',
+                 apikeys = {}):
         self.mbid = mbid
         self.mb_server = mb_server
         self.data = self.fetch_data(mbid, self.mb_server)
+        if apikeys['fanart.tv'] is not None:
+            self.data['fanart.tv'] = self.fetch_fanart([mbid], apikeys['fanart.tv'])
         for a in self.data['relations']:
             if a['type'] == "wikipedia":
                 if a['url'].find("en") > -1:
@@ -40,7 +43,15 @@ class Artist(MusicBrainzEntity):
         wikipedia = WikipediaAPI('action=query&prop=revisions&format=json&rvprop=content&rvlimit=1&rvparse=&rvsection=0&titles='+page_name,wp_server)
         json_data = wikipedia.response.read();
         return json.loads(json_data)
-    
+
+    def fetch_fanart(self, mbids, apikey = None):
+        fanart_images = {}
+        for mbid in mbids:
+            result = FanartAPI('artist', mbid, apikey)
+            if result is not None:
+                fanart_images[mbid] = json.loads(result.response.read())
+        return fanart_images
+
     def fetch_releases(self, mbid, mb_server):
         mb_api = MusicBrainzAPI('release?artist='+mbid+'&status=official&type=album&fmt=json',mb_server)
         json_data = mb_api.response.read()
