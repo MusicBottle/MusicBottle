@@ -18,7 +18,7 @@ class Artist(MusicBrainzEntity):
     def __init__(self, mbid, mb_server = 'http://musicbrainz.org'):
         self.mbid = mbid
         self.mb_server = mb_server
-        self.data = self.fetch_data(mbid, mb_server)
+        self.data = self.fetch_data(mbid, self.mb_server)
         for a in self.data['relations']:
             if a['type'] == "wikipedia":
                 if a['url'].find("en") > -1:
@@ -28,7 +28,7 @@ class Artist(MusicBrainzEntity):
                     self.wikipedia = self.wikipedia.replace("&amp;", "&")
                     break
                 
-        self.releases = self.fetch_releases(mbid, mb_server)
+        self.releases = self.fetch_releases(mbid, self.mb_server)
 
     def fetch_data(self, mbid, mb_server):
         mb_api = MusicBrainzAPI('artist/'+mbid+'?inc=aliases+url-rels+releases&fmt=json',
