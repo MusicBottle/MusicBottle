@@ -1,0 +1,25 @@
+
+body
+{
+    font-family: sans-serif;
+    font-size: 0.8em;
+}
+
+header, footer, section
+{
+    border:1px solid grey;
+    width:70%;
+    margin:2% 15% 2% 15%;
+    padding:10px;
+}
+
+nav ul
+{
+    list-style-type:none;
+}
+
+nav li
+{
+    float:left;
+    margin:1em;
+}
