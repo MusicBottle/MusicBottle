@@ -97,6 +97,7 @@ class Artist(MusicBrainzEntity):
                                     'include': '+'.join([
                                         'aliases',
                                         'url-rels',
+                                        'artist-rels',
                                         'releases',
                                     ]),
                                 }, mb_server)
