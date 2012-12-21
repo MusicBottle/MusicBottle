@@ -6,7 +6,7 @@
 <html  lang="en">
     
 <head>
-        <title>MusicBrainz Artist: {{ name }}</title>
+        <title>{{ _('MusicBrainz Artist: %(title)s', title=name) }}</title>
         <meta charset="UTF-8"/>
         <meta name="description" content="">
         <meta name="generator" content="Geany 1.22" />
@@ -17,7 +17,14 @@
 <body>
      {% include  'header.html' %}
     <section id="overview">
-        <h2>{{name}} <span style="font-size:smaller">{{artist.data['disambiguation']}}</span></h2>
+        <h2>{{
+            _('%(title)s %(disambiguation)s', **{
+                'title': name,
+                'disambiguation': Markup('<span style="font-size:smaller">') +
+                                  artist.data['disambiguation'] +
+                                  Markup('</span>'),
+            })
+        }}</h2>
         <p id="wp-summary" style="text-align:justify;"></p>
         <script>getWikiText({{artist.wikipedia[0]|tojson|safe}},{{artist.wikipedia[1]|tojson|safe}})</script>
     </section>
@@ -51,8 +58,8 @@
         </table>
     </section>
     <section id="debug">
-        <h3>Debug information</h3>
-        <h4>Dump as JSON data</h4>
+        <h3>{{ _('Debug information') }}</h3>
+        <h4>{{ _('Dump as JSON data') }}</h4>
         <pre>{{artist.debug_json|safe}}</pre>
     </section>
    {% include  'footer.html' %}

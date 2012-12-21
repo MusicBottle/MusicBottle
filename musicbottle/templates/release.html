@@ -6,7 +6,7 @@
 {% set title=release.data['title'] %}
 
 <head>
-    <title>MusicBrainz Release: {{ title }}</title>
+    <title>{{ _('MusicBrainz Release: %(title)s!', title=title) }}</title>
     <meta http-equiv="content-type" content="text/html;charset=utf-8" />
     <meta name="generator" content="Geany 1.22" />
     <style>
@@ -19,25 +19,34 @@
 </head>
 
 <body>
-    <div id="header"><h1>A Basic Bottled Release</h1></div>
-    <div id="content"><h2>{{title}} &mdash;<span style="font-size:smaller">{{release.data['disambiguation']}}</span></h2>
-        <img src="http://coverartarchive.org/release/{{release.data['id']}}/front-250" width="150" alt="{{title}} Cover"></img>
-        <p>Coming soon: lots of crap about {{title}}!</p>
+    <div id="header"><h1>{{ _('A Basic Bottled Release') }}</h1></div>
+    <div id="content"><h2>{{
+        gettext ('%(title)s —%(disambiguation)s', **{
+            'title': title,
+            'disambiguation': Markup('<span style="font-size:smaller">') +
+                              release.data['disambiguation'] +
+                              Markup('</span>'),
+        })
+    }}</h2>
+        <img src="http://coverartarchive.org/release/{{release.data['id']}}/front-250" width="150" alt="{{
+            _('%(title)s Cover', title=title)
+        }}"></img>
+        <p>{{ _('Coming soon: lots of crap about %(title)s!', title=title) }}</p>
     </div>
     <div id="debug">
-        <h3>Debug information</h3>
-        <h4>Dump as defintion list</h4>
+        <h3>{{ _('Debug information') }}</h3>
+        <h4>{{ _('Dump as defintion list') }}</h4>
         <dl>
             {% for v in release.data %}
                 <dt>{{v}}</dt>
                     <dd>{{release.data[v]}}</dd>
             {% endfor %}
         </dl>
-        <h4>Raw dump of release.data</h4>
+        <h4>{{ _('Raw dump of release.data') }}</h4>
         <p>{{release.data}}</p>
     </div>
     <div id="footer">
-        <p>&copy;2012</p>
+        <p>{{ _('©2012') }}</p>
     </div>
 </body>
 
