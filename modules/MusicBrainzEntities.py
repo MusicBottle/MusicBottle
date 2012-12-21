@@ -27,19 +27,7 @@ class MusicBrainzEntity(object):
 
     def format_debug_data_json(self, data):
         """Return a JSON-as-HTML formatted representation of the entity data."""
-        # Set up replacement "table"
-        replacements = (
-            ("&", "&amp;"),
-            ("<", "&lt;"),
-            (">", "&gt;"),
-            ('"', "&quot;"),
-        )
-
-        # Generate (and return) output
-        output = json.dumps(data, sort_keys=True, indent=4)
-        for old, new in replacements:
-            output = output.replace(old, new)
-        return output
+        return json.dumps(data, sort_keys=True, indent=4)
 
 class Artist(MusicBrainzEntity):
     """"""
