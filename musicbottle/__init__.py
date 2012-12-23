@@ -26,7 +26,7 @@ babel = Babel(app)
 def get_locale():
     # List which languages we support.
     #@TODO: Automatically detect this somehow.
-    supported_languages = ['da', 'en']
+    supported_languages = ['da', 'en', 'nb']
     # Use the browser's settings to determine which language to serve.
     #@TODO: Enable setting a cookie or something instead.
     return request.accept_languages.best_match(supported_languages)
