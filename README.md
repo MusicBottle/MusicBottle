@@ -30,9 +30,10 @@ virtual environment:
     virtualenv venv
     . venv/bin/activate
 
-Install dependencies:
+Install download and install the required dependencies:
 
-    pip install Flask Flask-Script Flask-Babel
+    pip install -U --download-cache=/tmp/pip -I -r requirements.txt --no-install
+    pip install -U --download-cache=/tmp/pip -I -r requirements.txt --no-download
 
 Running MusicBottle
 -------------------

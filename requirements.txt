@@ -1,0 +1,10 @@
+Werkzeug
+Jinja2
+Flask
+
+Flask-Script
+
+pytz
+speaklater
+Babel
+Flask-Babel
