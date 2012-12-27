@@ -8,3 +8,7 @@ pytz
 speaklater
 Babel
 Flask-Babel
+
+twill
+Flask-Testing
+nose
