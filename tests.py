@@ -10,7 +10,9 @@ import unittest
 
 class MusicBottleTestCase(unittest.TestCase):
 
-    def setUp(self): pass
+    def setUp(self):
+        musicbottle.app.config['TESTING'] = True
+        self.app = musicbottle.app.test_client()
 
     def tearDown(self): pass
 
