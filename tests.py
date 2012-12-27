@@ -18,7 +18,7 @@ class MusicBottleTestCase(unittest.TestCase):
 
     def test_index_page(self):
         rv = self.app.get('/')
-        assert '<h1>Welcome to MusicBottle!</h1>' in rv.data
+        assert '<h1>Hello from The Bottle!</h1>' in rv.data
 
 def main():
     """Main program. Run the tests."""
