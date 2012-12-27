@@ -14,8 +14,6 @@ class MusicBottleTestCase(unittest.TestCase):
         musicbottle.app.config['TESTING'] = True
         self.app = musicbottle.app.test_client()
 
-    def tearDown(self): pass
-
     def test_index_page(self):
         rv = self.app.get('/')
         assert '<h1>Hello from The Bottle!</h1>' in rv.data
