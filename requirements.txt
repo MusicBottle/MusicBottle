@@ -11,3 +11,4 @@ Flask-Babel
 
 twill
 Flask-Testing
+nose
