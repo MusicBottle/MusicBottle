@@ -1,10 +1,6 @@
 #!/usr/bin/python2
 # -*- coding: utf-8 -*-
-"""Test coverage for MusicBottle.
-
-
-"""
-import os
+"""Test coverage for MusicBottle."""
 import musicbottle
 from flask.ext.testing import TestCase
 
