@@ -6,20 +6,21 @@
 """
 import os
 import musicbottle
-import unittest
+from flask.ext.testing import TestCase
 
-class MusicBottleTestCase(unittest.TestCase):
+class MusicBottleTestCase(TestCase):
 
-    def setUp(self):
+    def create_app(self):
         musicbottle.app.config['TESTING'] = True
-        self.app = musicbottle.app.test_client()
+        return musicbottle.app
 
     def test_index_page(self):
-        rv = self.app.get('/')
+        rv = self.client.get('/')
         assert '<h1>Hello from The Bottle!</h1>' in rv.data
 
 def main():
     """Main program. Run the tests."""
+    import unittest
     unittest.main()
 
 if __name__ == "__main__":
