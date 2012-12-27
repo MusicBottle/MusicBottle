@@ -18,5 +18,9 @@ class MusicBottleTestCase(unittest.TestCase):
         rv = self.app.get('/')
         assert '<h1>Welcome to MusicBottle!</h1>' in rv.data
 
-if __name__ == "__main__":
+def main():
+    """Main program. Run the tests."""
     unittest.main()
+
+if __name__ == "__main__":
+    main()
