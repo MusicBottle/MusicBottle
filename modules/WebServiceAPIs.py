@@ -42,8 +42,8 @@ class FanartAPI(WebServiceAPI):
     Information about type, sort, and limit can be found in the API:
     http://fanart.tv/api-docs/music-api/
     """
-    def __init__(self, entity_type, mbid, apikey = None,
-                 type = "all", sort = 1, limit = 2):
+    def __init__(self, entity_type, mbid, apikey=None,
+                 type="all", sort=1, limit=2):
         self.supported_entity_types = ('artist', 'album', 'label')
         self._request_url_base = 'http://api.fanart.tv/webservice/' + \
                                  '{entity_type}/{key}/{mbid}/' + \
@@ -69,7 +69,7 @@ class FanartAPI(WebServiceAPI):
 
 
 class MusicBrainzAPI(WebServiceAPI):
-    def __init__(self, request, server = 'http://musicbrainz.org'):
+    def __init__(self, request, server='http://musicbrainz.org'):
         self.server = server
         self.request = request
         self.request_url = server + '/ws/2/' + request
