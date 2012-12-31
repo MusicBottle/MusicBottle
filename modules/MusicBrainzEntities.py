@@ -9,6 +9,7 @@ from operator import itemgetter
 from collections import *
 from WebServiceAPIs import *
 
+
 def date_to_tuple(date):
     date_length = len(date)
     if date_length == 4: #YYYY
@@ -20,6 +21,7 @@ def date_to_tuple(date):
 
     return None
 
+
 class MusicBrainzEntity(object):
     """Parent class for all MusicBrainz entities."""
     def __init__(self, mbid):
@@ -28,6 +30,7 @@ class MusicBrainzEntity(object):
     def format_debug_data_json(self, data):
         """Return a JSON-as-HTML formatted representation of the entity data."""
         return json.dumps(data, sort_keys=True, indent=4)
+
 
 class Artist(MusicBrainzEntity):
     """"""
@@ -109,6 +112,7 @@ class Artist(MusicBrainzEntity):
         mb_api = MusicBrainzAPI('release-group?artist='+mbid+'&type=album&limit=100&offset='+str(offset)+'&fmt=json',mb_server)
         json_data = mb_api.response.read()
         return json.loads(json_data)
+
 
 class Release(MusicBrainzEntity):
     """"""
