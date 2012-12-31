@@ -4,6 +4,7 @@
 
 import urllib2
 
+
 class WebServiceAPI(object):
     """What do we want to know?
     - Is the site available via HTTP, HTTPS, something else?
@@ -18,6 +19,7 @@ class WebServiceAPI(object):
     def call(self, url):
         return urllib2.urlopen(url)
 
+
 class MediaWikiAPI(WebServiceAPI):
     """Parent class for MediaWiki based sites."""
     def __init__(self, request, server):
@@ -26,8 +28,10 @@ class MediaWikiAPI(WebServiceAPI):
         self.request_url = server + '/w/api.php?' + request
         self.response = self.call(self.request_url)
 
+
 class WikipediaAPI(MediaWikiAPI):
     pass
+
 
 class FanartAPI(WebServiceAPI):
     """Class for getting information from fanart.tv.
@@ -61,6 +65,7 @@ class FanartAPI(WebServiceAPI):
                                 })
             self.response = self.call(self._request_url)
             #@TODO: Catch and log if something goes wrong with the HTTP request.
+
 
 class MusicBrainzAPI(WebServiceAPI):
     def __init__(self, request, server = 'http://musicbrainz.org'):
