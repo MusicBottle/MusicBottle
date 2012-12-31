@@ -13,11 +13,11 @@ from WebServiceAPIs import *
 def date_to_tuple(date):
     date_length = len(date)
     if date_length == 4:  # YYYY
-        return (int(date),0,0)
+        return (int(date), 0, 0)
     elif date_length == 7:  # YYYY-MM
-        return (int(date[:4]),int(date[5:7]),0)
+        return (int(date[:4]), int(date[5:7]), 0)
     elif date_length == 10:  # YYYY-MM-DD
-        return (int(date[:4]),int(date[5:7]),int(date[8:10]))
+        return (int(date[:4]), int(date[5:7]), int(date[8:10]))
 
     return None
 
@@ -52,15 +52,15 @@ class Artist(MusicBrainzEntity):
 
         #TODO: Add support for multiple wikipedia pages
         #If there a multiple link languages, use user's preference.
-        self.wikipedia = ("","")  # Tuple format - text,domain
+        self.wikipedia = ("", "")  # Tuple format - text, domain
         for a in self.data['relations']:
             if a['type'] == "wikipedia":
-                [domain,page_name]=a['url'].split("/wiki/")
-                self.wikipedia = self.fetch_wikipedia(page_name,domain)["parse"]["text"]['*']
+                [domain, page_name]=a['url'].split("/wiki/")
+                self.wikipedia = self.fetch_wikipedia(page_name, domain)["parse"]["text"]['*']
                 summary_start = self.wikipedia.find("<p>")+3
                 if summary_start != 2:  # Ie., was -1 before adding 3
                     summary_end = self.wikipedia.find("</p>")
-                    self.wikipedia = (self.wikipedia[summary_start:summary_end],domain)
+                    self.wikipedia = (self.wikipedia[summary_start:summary_end], domain)
                 break
 
         releases = self.fetch_releases(mbid, mb_server)
@@ -73,12 +73,12 @@ class Artist(MusicBrainzEntity):
             orig_date = date_to_tuple(r["first-release-date"])
             if orig_date is not None:  # Don't display releases with no date.
                 release_year = "" if orig_date[0] == 0 else str(orig_date[0])
-                release_dict = {"data":r,\
-                                "date":orig_date,\
-                                "year":release_year}
+                release_dict = {"data": r, \
+                                "date": orig_date,\
+                                "year": release_year}
                 self.release_groups[t_str].append(release_dict)
 
-        for key,value in self.release_groups.items():
+        for key, value in self.release_groups.items():
             self.release_group_counts[key] = len(value)
             value.sort(key=itemgetter("date"))
 
@@ -96,7 +96,7 @@ class Artist(MusicBrainzEntity):
         return json.loads(json_data)
 
     def fetch_wikipedia(self, page_name, wp_server):
-        wikipedia = WikipediaAPI('action=parse&prop=text&format=json&page='+page_name,wp_server)
+        wikipedia = WikipediaAPI('action=parse&prop=text&format=json&page='+page_name, wp_server)
         json_data = wikipedia.response.read();
         return json.loads(json_data)
 
@@ -108,8 +108,8 @@ class Artist(MusicBrainzEntity):
                 fanart_images[mbid] = json.loads(result.response.read())
         return fanart_images
 
-    def fetch_releases(self, mbid, mb_server,offset=0):
-        mb_api = MusicBrainzAPI('release-group?artist='+mbid+'&type=album&limit=100&offset='+str(offset)+'&fmt=json',mb_server)
+    def fetch_releases(self, mbid, mb_server, offset=0):
+        mb_api = MusicBrainzAPI('release-group?artist='+mbid+'&type=album&limit=100&offset='+str(offset)+'&fmt=json', mb_server)
         json_data = mb_api.response.read()
         return json.loads(json_data)
 
