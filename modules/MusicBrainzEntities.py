@@ -28,7 +28,7 @@ class MusicBrainzEntity(object):
         self.mbid = mbid
 
     def format_debug_data_json(self, data):
-        """Return a JSON-as-HTML formatted representation of the entity data."""
+        """Return a HTML formatted JSON representation of the entity data."""
         return json.dumps(data, sort_keys=True, indent=4)
 
 
@@ -55,11 +55,13 @@ class Artist(MusicBrainzEntity):
         for a in self.data['relations']:
             if a['type'] == "wikipedia":
                 [domain, page_name] = a['url'].split("/wiki/")
-                self.wikipedia = self.fetch_wikipedia(page_name, domain)["parse"]["text"]['*']
+                fetched_wikipedia = self.fetch_wikipedia(page_name, domain)
+                self.wikipedia = fetched_wikipedia["parse"]["text"]['*']
                 summary_start = self.wikipedia.find("<p>")+3
                 if summary_start != 2:  # Ie., was -1 before adding 3
                     summary_end = self.wikipedia.find("</p>")
-                    self.wikipedia = (self.wikipedia[summary_start:summary_end], domain)
+                    self.wikipedia = \
+                        (self.wikipedia[summary_start:summary_end], domain)
                 break
 
         releases = self.fetch_releases(mbid, mb_server)
@@ -95,7 +97,9 @@ class Artist(MusicBrainzEntity):
         return json.loads(json_data)
 
     def fetch_wikipedia(self, page_name, wp_server):
-        wikipedia = WikipediaAPI('action=parse&prop=text&format=json&page='+page_name, wp_server)
+        wikipedia = \
+            WikipediaAPI('action=parse&prop=text&format=json&page='+page_name,
+                         wp_server)
         json_data = wikipedia.response.read()
         return json.loads(json_data)
 
@@ -108,7 +112,9 @@ class Artist(MusicBrainzEntity):
         return fanart_images
 
     def fetch_releases(self, mbid, mb_server, offset=0):
-        mb_api = MusicBrainzAPI('release-group?artist='+mbid+'&type=album&limit=100&offset='+str(offset)+'&fmt=json', mb_server)
+        mb_api = MusicBrainzAPI('release-group?artist=' + mbid +
+                                '&type=album&limit=100&offset=' + str(offset) +
+                                '&fmt=json', mb_server)
         json_data = mb_api.response.read()
         return json.loads(json_data)
 
