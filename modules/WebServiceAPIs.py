@@ -65,7 +65,7 @@ class FanartAPI(WebServiceAPI):
                 'limit': limit,
             })
             self.response = self.call(self._request_url)
-            #@TODO: Catch and log if something goes wrong with the HTTP request.
+            #@TODO: Catch and log if something goes awry with the HTTP request.
 
 
 class MusicBrainzAPI(WebServiceAPI):
