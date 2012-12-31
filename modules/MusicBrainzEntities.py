@@ -34,8 +34,7 @@ class MusicBrainzEntity(object):
 
 class Artist(MusicBrainzEntity):
     """"""
-    def __init__(self, mbid, mb_server = 'http://musicbrainz.org',
-                 apikeys = {}):
+    def __init__(self, mbid, mb_server='http://musicbrainz.org', apikeys={}):
         self.mbid = mbid
         self.mb_server = mb_server
         self.data = self.fetch_data(mbid, self.mb_server)
@@ -100,7 +99,7 @@ class Artist(MusicBrainzEntity):
         json_data = wikipedia.response.read();
         return json.loads(json_data)
 
-    def fetch_fanart(self, mbids, apikey = None):
+    def fetch_fanart(self, mbids, apikey=None):
         fanart_images = {}
         for mbid in mbids:
             result = FanartAPI('artist', mbid, apikey)
@@ -116,7 +115,7 @@ class Artist(MusicBrainzEntity):
 
 class Release(MusicBrainzEntity):
     """"""
-    def __init__(self, mbid, mb_server = 'http://musicbrainz.org'):
+    def __init__(self, mbid, mb_server='http://musicbrainz.org'):
         self.mbid = mbid
         self.mb_server = mb_server
         self.data = self.fetch_data(mbid, mb_server)
