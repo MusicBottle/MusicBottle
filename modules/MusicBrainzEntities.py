@@ -84,15 +84,16 @@ class Artist(MusicBrainzEntity):
             value.sort(key=itemgetter("date"))
 
     def fetch_data(self, mbid, mb_server):
-        mb_api = MusicBrainzAPI('artist/%(mbid)s?fmt=json&inc=%(include)s' % {
-                                    'mbid': mbid,
-                                    'include': '+'.join([
-                                        'aliases',
-                                        'url-rels',
-                                        'artist-rels',
-                                        'releases',
-                                    ]),
-                                }, mb_server)
+        mb_api = MusicBrainzAPI(
+            'artist/{mbid}?fmt=json&inc={include}'.format(**{
+                'mbid': mbid,
+                'include': '+'.join([
+                    'aliases',
+                    'url-rels',
+                    'artist-rels',
+                    'releases',
+                ]),
+            }), mb_server)
         json_data = mb_api.response.read()
         return json.loads(json_data)
 
