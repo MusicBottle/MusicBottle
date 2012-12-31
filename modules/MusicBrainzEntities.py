@@ -72,8 +72,8 @@ class Artist(MusicBrainzEntity):
             orig_date = date_to_tuple(r["first-release-date"])
             if orig_date is not None:  # Don't display releases with no date.
                 release_year = "" if orig_date[0] == 0 else str(orig_date[0])
-                release_dict = {"data": r, \
-                                "date": orig_date,\
+                release_dict = {"data": r,
+                                "date": orig_date,
                                 "year": release_year}
                 self.release_groups[t_str].append(release_dict)
 
