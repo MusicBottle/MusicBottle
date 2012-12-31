@@ -12,11 +12,11 @@ from WebServiceAPIs import *
 
 def date_to_tuple(date):
     date_length = len(date)
-    if date_length == 4:  #YYYY
+    if date_length == 4:  # YYYY
         return (int(date),0,0)
-    elif date_length == 7:  #YYYY-MM
+    elif date_length == 7:  # YYYY-MM
         return (int(date[:4]),int(date[5:7]),0)
-    elif date_length == 10:  #YYYY-MM-DD
+    elif date_length == 10:  # YYYY-MM-DD
         return (int(date[:4]),int(date[5:7]),int(date[8:10]))
 
     return None
@@ -52,13 +52,13 @@ class Artist(MusicBrainzEntity):
 
         #TODO: Add support for multiple wikipedia pages
         #If there a multiple link languages, use user's preference.
-        self.wikipedia = ("","")  #Tuple format - text,domain
+        self.wikipedia = ("","")  # Tuple format - text,domain
         for a in self.data['relations']:
             if a['type'] == "wikipedia":
                 [domain,page_name]=a['url'].split("/wiki/")
                 self.wikipedia = self.fetch_wikipedia(page_name,domain)["parse"]["text"]['*']
                 summary_start = self.wikipedia.find("<p>")+3
-                if summary_start != 2:  #ie. was -1 before adding 3
+                if summary_start != 2:  # Ie., was -1 before adding 3
                     summary_end = self.wikipedia.find("</p>")
                     self.wikipedia = (self.wikipedia[summary_start:summary_end],domain)
                 break
@@ -71,7 +71,7 @@ class Artist(MusicBrainzEntity):
                 t_str += "+"+t
 
             orig_date = date_to_tuple(r["first-release-date"])
-            if orig_date is not None:  #Don't display releases with no date.
+            if orig_date is not None:  # Don't display releases with no date.
                 release_year = "" if orig_date[0] == 0 else str(orig_date[0])
                 release_dict = {"data":r,\
                                 "date":orig_date,\
