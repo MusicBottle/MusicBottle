@@ -5,6 +5,7 @@ import musicbottle
 import unittest
 from flask.ext.testing import TestCase
 
+
 class MusicBottleTestCase(TestCase):
 
     def create_app(self):
@@ -14,6 +15,7 @@ class MusicBottleTestCase(TestCase):
     def test_index_page(self):
         rv = self.client.get('/')
         assert '<h1>Hello from The Bottle!</h1>' in rv.data
+
 
 class CodeStyleTestCase(unittest.TestCase):
     """Tests that the code complies to coding style."""
@@ -47,14 +49,14 @@ class CodeStyleTestCase(unittest.TestCase):
                     py_files += [os.path.abspath(node)]
                 elif os.path.isdir(node) and not self.exclude_directory(node):
                     for dirpath, dirnames, filenames in os.walk(node):
-                        # Set dirpath to be absolute, to save the trouble later.
+                        # Set dirpath to be absolute, saving the trouble later.
                         dirpath = os.path.abspath(dirpath)
                         for filename in filenames:
                             if self.include_file(filename):
                                 py_files += [os.path.join(dirpath, filename)]
         else:
             #@TODO: Actually err out and stop the testcase somehow.
-            print "We're not in the root of the project. Not running this test."
+            print "We're not in the root of the project. Aborting this test."
         return py_files
 
     def test_pep8_compliance(self):
@@ -64,6 +66,7 @@ class CodeStyleTestCase(unittest.TestCase):
         result = pep8style.check_files(self.files_to_check)
         self.assertEqual(result.total_errors, 0,
                          "Found code style errors (and warnings).")
+
 
 def main():
     """Main program. Run the tests."""
