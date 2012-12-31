@@ -96,7 +96,7 @@ class Artist(MusicBrainzEntity):
 
     def fetch_wikipedia(self, page_name, wp_server):
         wikipedia = WikipediaAPI('action=parse&prop=text&format=json&page='+page_name, wp_server)
-        json_data = wikipedia.response.read();
+        json_data = wikipedia.response.read()
         return json.loads(json_data)
 
     def fetch_fanart(self, mbids, apikey=None):
