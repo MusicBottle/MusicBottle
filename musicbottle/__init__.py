@@ -22,6 +22,7 @@ if getenv('MUSICBOTTLE_SETTINGS') is not None:
     app.config.from_envvar('MUSICBOTTLE_SETTINGS')
 babel = Babel(app)
 
+
 @babel.localeselector
 def get_locale():
     # List which languages we support.
@@ -31,9 +32,11 @@ def get_locale():
     #@TODO: Enable setting a cookie or something instead.
     return request.accept_languages.best_match(supported_languages)
 
+
 @app.route('/')
 def musicbottle_welcome():
     return render_template('index.html')
+
 
 @app.route('/artist/<artist_mbid>')
 def musicbottle_artist(artist_mbid):
@@ -42,10 +45,12 @@ def musicbottle_artist(artist_mbid):
     })
     return render_template('artist.html', artist=artist)
 
+
 @app.route('/release/<release_mbid>')
 def musicbottle_release(release_mbid):
     release = Release(release_mbid, app.config['MUSICBRAINZ_SERVER'])
     return render_template('release.html', release=release)
+
 
 @app.context_processor
 def utility_processor():
