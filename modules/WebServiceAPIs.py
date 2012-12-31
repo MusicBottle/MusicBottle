@@ -57,13 +57,13 @@ class FanartAPI(WebServiceAPI):
             self.response = None
         else:
             self._request_url = self._request_url_base.format(**{
-                                    'entity_type': self._entity_type,
-                                    'key': apikey,
-                                    'mbid': mbid,
-                                    'type': type,
-                                    'sort': sort,
-                                    'limit': limit,
-                                })
+                'entity_type': self._entity_type,
+                'key': apikey,
+                'mbid': mbid,
+                'type': type,
+                'sort': sort,
+                'limit': limit,
+            })
             self.response = self.call(self._request_url)
             #@TODO: Catch and log if something goes wrong with the HTTP request.
 
