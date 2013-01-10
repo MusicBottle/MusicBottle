@@ -21,6 +21,8 @@ app.config.from_object('musicbottle.default_settings')
 if getenv('MUSICBOTTLE_SETTINGS') is not None:
     app.config.from_envvar('MUSICBOTTLE_SETTINGS')
 babel = Babel(app)
+# Adding expression statements to jinja2 templates
+app.jinja_env.add_extension('jinja2.ext.do')
 
 
 @babel.localeselector
