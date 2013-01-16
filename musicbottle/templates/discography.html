@@ -1,0 +1,41 @@
+{% extends "empty_bottle.html" %}
+
+{% block title %}
+<!-- Fix me!!! -->
+Discography
+{% endblock %}
+
+
+{% block content %}
+    <section id="discography">
+
+        <table style="width:100%;">
+            <tr>
+            {% set i = 0 %} {# This would probably be better in JS #}
+            {% set rows = 0 %}
+            {% for rg in artist.release_groups[''] %}
+                    {% set i = i + 1 %}
+                    {% if i > 5 %}
+                        {% set i = 1 %}
+                        {% set rows = rows + 1 %}
+                        </tr>
+                    {% endif %}
+
+                    {% if rows < 3 %}
+                        {% if i == 1 %}
+                            <tr>
+                        {% endif %}
+
+                        <td style="width:20%;">
+                            <img style="display:block; margin-left:auto; margin-right:auto; box-shadow: 8px 8px 4px #888888;" src="http://coverartarchive.org/beta/release-group/{{rg['data']['id']}}/front-250" width="90%" onerror='onImageError("{{ url_for('static', filename='images/') }}", this)'></img>
+                            </a>
+                    </br>
+                            <div style="text-align:center; padding:0; height:3.5em; border:0px; margin:0px">{{rg['data']['title']}}</br>{{rg['year']}}</div>
+                       </td>
+               {% endif %}
+            {% endfor %}
+            </tr>
+        </table>
+        """
+    </section>
+{% endblock %}
