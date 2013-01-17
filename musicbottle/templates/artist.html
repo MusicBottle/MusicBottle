@@ -33,5 +33,9 @@
             <script>getWikiText({{artist.wikipedia[0]|tojson|safe}},{{artist.wikipedia[1]|tojson|safe}})</script>
         </article>
     </section>
+        <section id="debug">
+        <!-- full json dump for debugging, to be removed -->
+        {% include 'debug.html' %}
+    </section>
 {% endblock %}
     
