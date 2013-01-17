@@ -2,13 +2,33 @@
 {% set end = artist.data['life-span']['end'] %}
 {% set relations = artist.data['relations'] %}
 
-{# append method works only with "do" #}
+{# nb: append method works only with "do" #}
+{# loop through ARs and sort them into lists for display #}
+
 {% set other_names = [] %}
+{% set members = [] %}
+{% set member_of = [] %}
+{% set collaborators = [] %}
+
+
 {% for relation in relations %}
-    {% if relation['type'] == "is person" and relation['direction'] == "forward" %}
+    {% if relation['type'] == "is person" %} {# nb: ignoring direction for now, "all names are equal" #}
         {% do other_names.append(relation) %}
     {% endif %}
+    
+    {% if relation['type'] == "member of band" %}
+        {% if relation['direction'] == "forward" %}
+            {% do member_of.append(relation) %}
+        {% endif %}
+        {%if relation['direction'] == "backward" %}
+            {% do members.append(relation) %}
+        {% endif %}
+    {% endif %}
+    
+    <!-- figure out collaborations -->
+
 {% endfor %}
+
 
 
 
@@ -17,13 +37,32 @@
 {% if other_names %}
     AKA:
     <ul style="list-style-type:none; ">
-        {% for relation in relations %}
-            {% if relation['type'] == "is person" %}
-                <li><a href="{{ "http://127.0.0.1:19048/artist/"+relation['artist']['id'] }}">{{ relation['artist']['name']}}</a></li>
-            {% endif %}
+        {% for entry in other_names %}
+                <li><a href="{{ url_for('artist', artist_mbid = entry['artist']['id'] ) }}">{{ entry['artist']['name']}}</a></li>
         {% endfor %}
     </ul>
 {% endif %}
+
+{% if members %}
+    Members:
+    <ul style="list-style-type:none;">
+        {% for entry in members %}
+            <li><a href="{{ url_for('artist', artist_mbid = entry['artist']['id'] ) }}">{{ entry['artist']['name']}}</a></li>
+        {% endfor %}
+    </ul>
+    
+{% endif %}
+
+{% if member_of %}
+    Members:
+    <ul style="list-style-type:none;">
+        {% for entry in member_of %}
+            <li><a href="{{ url_for('artist', artist_mbid = entry['artist']['id'] ) }}">{{ entry['artist']['name']}}</a></li>
+        {% endfor %}
+    </ul>
+{% endif %}
+
+
 
 
 
