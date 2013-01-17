@@ -40,14 +40,20 @@ def musicbottle_welcome():
     return render_template('index.html')
 
 
-@app.route('/artist/<artist_mbid>')
+@app.route('/artist/<artist_mbid>', endpoint='artist')
 def musicbottle_artist(artist_mbid):
     artist = Artist(artist_mbid, app.config['MUSICBRAINZ_SERVER'], apikeys={
         'fanart.tv': app.config['FANART_APIKEY'],
     })
     return render_template('artist.html', artist=artist)
 
-
+@ app.route('/artist/<artist_mbid>/discography')
+def musicbottle_artist_discography(artist_mbid):
+    artist = Artist(artist_mbid, app.config['MUSICBRAINZ_SERVER'], apikeys={
+        'fanart.tv': app.config['FANART_APIKEY'],
+    })
+    return render_template('discography.html', artist=artist)
+    
 @app.route('/release/<release_mbid>')
 def musicbottle_release(release_mbid):
     release = Release(release_mbid, app.config['MUSICBRAINZ_SERVER'])

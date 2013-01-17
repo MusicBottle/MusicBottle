@@ -12,16 +12,19 @@
 </head>
 
 <body>
-    {% include  'header.html' %}
-    {% block body %}
-    {% endblock %}
-    <!-- full json dump for debugging, to be removed -->
-    <section id="debug">
-        <h3>{{ _('Debug information') }}</h3>
-        <h4>{{ _('Dump as JSON data') }}</h4>
-        <pre>{{artist.debug_json}}</pre>
+    <header>
+        {% include  'header.html' %}
+    </header>
+    <section id="content">
+        {% block content %} {% endblock %}
     </section>
-    {% include  'footer.html' %}
+    <section id="debug">
+        <!-- full json dump for debugging, to be removed -->
+        {% include 'debug.html' %}
+    </section>
+    <footer>
+        {% include  'footer.html' %}
+    </footer>
 </body>
 
 </html>

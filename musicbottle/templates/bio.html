@@ -1,0 +1,29 @@
+{% set  begin = artist.data['life-span']['begin'] %}
+{% set end = artist.data['life-span']['end'] %}
+{% set relations = artist.data['relations'] %}
+
+{# append method works only with "do" #}
+{% set other_names = [] %}
+{% for relation in relations %}
+    {% if relation['type'] == "is person" and relation['direction'] == "forward" %}
+        {% do other_names.append(relation) %}
+    {% endif %}
+{% endfor %}
+
+
+
+
+{# at this point, I don't really care which is the "real name" so I'm ignoring direction of AR #}
+{% if other_names %}
+    AKA:
+    <ul style="list-style-type:none; ">
+        {% for relation in relations %}
+            {% if relation['type'] == "is person" %}
+                <li><a href="{{ "http://127.0.0.1:19048/artist/"+relation['artist']['id'] }}">{{ relation['artist']['name']}}</a></li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+{% endif %}
+
+
+

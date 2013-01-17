@@ -1,11 +1,11 @@
-{% extends "empty_bottle.html" %}
+{% extends "layout.html" %}
 
 {# make a "name" variable #}
 {% set name=artist.data['name'] %}
 
 
 {% block title %}
-{{ _('MusicBrainz Artist: %(title)s', title=name) }}
+    {{ _('MusicBrainz Artist: %(title)s', title=name) }}
 {% endblock %}
 
 
@@ -20,16 +20,12 @@
             })
         }}</h2>
         <section id="bio">
-            {% if  artist.data['type'] == "Group" %}
-                    {% include 'group.html' %}
-            {% elif artist.data['type'] == "Person" %}
-                {% include 'person.html' %}
-            {% endif %}
+           {% include 'bio.html' %}
         </section>
         <section id="links">
             <ul>
-                    <li><a href="{{url_for('artist', artist_mbid='f86acb2e-03fa-4992-957a-6f7d0155b34e')}}">zep</a></li>
-                    <li>link two</li>
+                    <li>to do: discography.html</li>
+                    <li>to do: figure out what subpages we want</li>
             </ul>
         </section>
         <article id="wiki">
