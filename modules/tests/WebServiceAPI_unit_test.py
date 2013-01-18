@@ -21,11 +21,9 @@ class WebServiceAPIUnitTest(unittest.TestCase):
 
     def test_create_request_url(self):
         """Test WebServiceAPI.create_request_url()."""
-        try:
-            # The function currently only consists of "pass", so...
-            self.wsapi.create_request_url()
-        except:
-            self.fail('Calling create_request_url() resulted in an Exception.')
+        # The function currently only consists of "pass", so we're only
+        # testing that it doesn't raise an exception.
+        self.wsapi.create_request_url()
 
     def test_call(self):
         """Test WebServiceAPI.call()."""
