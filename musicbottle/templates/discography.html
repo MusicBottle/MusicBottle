@@ -1,13 +1,12 @@
-{% extends "empty_bottle.html" %}
+{% extends "layout.html" %}
 
 {% block title %}
-<!-- Fix me!!! -->
-Discography
+    {{ _('MusicBottle: Discography for ') }} {{-artist.data['name']}}
 {% endblock %}
 
 
 {% block content %}
-    <section id="discography">
+   <section id="discography">
 
         <table style="width:100%;">
             <tr>

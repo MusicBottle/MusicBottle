@@ -19,7 +19,7 @@
         </section>
         <section id="links">
             <ul>
-                    <li>to do: discography.html</li>
+                    <li><a href="{{url_for('discography', artist_mbid=artist.data['id'] ) }}">Discography</a></li> 
                     <li>to do: figure out what subpages we want</li>
                     <li><a href="http://musicbrainz.org/artist/{{artist.data['id'] }} ">{{ artist.data['name'] }} on MusicBrainz</a></li>
             </ul>
