@@ -38,5 +38,4 @@ class WebServiceAPIUnitTest(unittest.TestCase):
                             ))
         # Test "bad" URLs
         for (url, exception) in self.urls_fail:
-            print url, exception
             self.assertRaises(exception, self.wsapi.call, url)
