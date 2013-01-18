@@ -9,15 +9,6 @@ class WebServiceAPIUnitTest(unittest.TestCase):
     """TestCase class for testing WebServiceAPI."""
     def setUp(self):
         self.wsapi = WebServiceAPI()
-        # Good URLs; format: [url, response attribute]
-        self.urls = [
-            ['http://musicbrainz.org', 'geturl'],
-            ['https://beta.musicbrainz.org/', 'geturl'],
-        ]
-        # Bad URLs; format: [url, (exception(s) that should be raised)]
-        self.urls_fail = [
-            ['spam', (ValueError)],
-        ]
 
     def test_create_request_url(self):
         """Test WebServiceAPI.create_request_url()."""
@@ -28,12 +19,15 @@ class WebServiceAPIUnitTest(unittest.TestCase):
     def test_call(self):
         """Test WebServiceAPI.call()."""
         # Test "good" URLs
-        for (url, attr) in self.urls:
+        good_urls = [
+            'http://musicbrainz.org',
+            'https://beta.musicbrainz.org/',
+        ]
+        for url in good_urls:
             result = self.wsapi.call(url)
-            self.assertTrue(hasattr(result, attr),
-                            'Not an urlopen() returned object: {url}.'.format(
-                                url=url,
-                            ))
-        # Test "bad" URLs
-        for (url, exception) in self.urls_fail:
-            self.assertRaises(exception, self.wsapi.call, url)
+            fail_message = 'Not an urlopen() returned object: {result}.'
+            self.assertTrue(hasattr(result, 'geturl'),
+                            fail_message.format(result=result)
+                            )
+        # Test that a bad URL fails
+        self.assertRaises(ValueError, self.wsapi.call, 'spam')
