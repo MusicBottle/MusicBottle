@@ -44,7 +44,7 @@
 {% endif %}
 
 {% if member_of %}
-    Members:
+    Member of:
     <ul style="list-style-type:none;">
         {% for entry in member_of %}
             <li><a href="{{ url_for('artist', artist_mbid = entry['artist']['id'] ) }}">{{ entry['artist']['name']}}</a></li>
