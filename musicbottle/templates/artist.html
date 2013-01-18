@@ -1,14 +1,9 @@
 {% extends "layout.html" %}
-
 {# make a "name" variable #}
 {% set name=artist.data['name'] %}
-
-
 {% block title %}
     {{ _('MusicBrainz Artist: %(title)s', title=name) }}
 {% endblock %}
-
-
 {% block content %}
     <section id="overview">
         <h2>{{
@@ -26,6 +21,7 @@
             <ul>
                     <li>to do: discography.html</li>
                     <li>to do: figure out what subpages we want</li>
+                    <li><a href="http://musicbrainz.org/artist/{{artist.data['id'] }} ">{{ artist.data['name'] }} on MusicBrainz</a></li>
             </ul>
         </section>
         <article id="wiki">

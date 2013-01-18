@@ -35,7 +35,7 @@ def get_locale():
     return request.accept_languages.best_match(supported_languages)
 
 
-@app.route('/')
+@app.route('/', endpoint='home')
 def musicbottle_welcome():
     return render_template('index.html')
 
