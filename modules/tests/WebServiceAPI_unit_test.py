@@ -31,5 +31,4 @@ class WebServiceAPIUnitTest(unittest.TestCase):
         self.verify_wsapi_call('https://beta.musicbrainz.org/')
 
         # Test that a bad URL fails
-        with self.assertRaises(ValueError):
-            self.verify_wsapi_call('spam')
+        self.assertRaises(ValueError, self.wsapi.call, 'spam')
