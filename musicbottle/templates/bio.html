@@ -1,14 +1,18 @@
-{% set  begin = artist.data['life-span']['begin'] %}
+{# included in 'artist.html' #}
+
+{# short variable names for readability #}
+{% set begin = artist.data['life-span']['begin'] %}
 {% set end = artist.data['life-span']['end'] %}
 {% set relations = artist.data['relations'] %}
+
+{# lists for sorting relationship types #}
 {% set other_names = [] %}
 {% set members = [] %}
 {% set member_of = [] %}
 {% set collaborators = [] %}
 
+{# loop through ARs and sort them into lists (above) for display #}
 {# nb: append method works only with "do" #}
-{# loop through ARs and sort them into lists for display #}
-
 {% for relation in relations -%}
     {% if relation['type'] == "is person" %} {# nb: ignoring direction for now, "all names are equal" #}
         {% do other_names.append(relation) %}

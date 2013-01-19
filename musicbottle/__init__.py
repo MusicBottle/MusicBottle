@@ -50,8 +50,7 @@ def musicbottle_artist(artist_mbid):
 
 @app.route('/artist/<artist_mbid>/discography', endpoint='discography')
 def musicbottle_artist_discography(artist_mbid):
-    artist = Artist(artist_mbid, app.config['MUSICBRAINZ_SERVER'], apikeys={
-        'fanart.tv': app.config['FANART_APIKEY'],
+    artist = Artist(artist_mbid, app.config['MUSICBRAINZ_SERVER']
     })
     return render_template('discography.html', artist=artist)
 
