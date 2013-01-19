@@ -38,7 +38,7 @@ class Artist(MusicBrainzEntity):
         self.mbid = mbid
         self.mb_server = mb_server
         self.data = self.fetch_data(mbid, self.mb_server)
-        if apikeys['fanart.tv'] is not None:
+        if apikeys.has_key('fanart.tv') and apikeys['fanart.tv'] is not None:
             self.data['fanart.tv'] = self.fetch_fanart([mbid],
                                                        apikeys['fanart.tv'])
         self.debug_json = self.format_debug_data_json(self.data)
