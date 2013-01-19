@@ -9,6 +9,10 @@ speaklater
 Babel
 Flask-Babel
 
+docutils>=0.7
+Pygments>=1.2
+Sphinx
+
 twill
 Flask-Testing
 nose
