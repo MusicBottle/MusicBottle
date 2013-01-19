@@ -28,7 +28,7 @@
     AKA:
     <ul style="list-style-type:none; ">
         {% for entry in other_names %}
-                <li><a href="{{ url_for('artist', artist_mbid = entry['artist']['id'] ) }}">{{ entry['artist']['name']}}</a></li>
+            <li><a href="{{ url_for('artist', artist_mbid = entry['artist']['id'] ) }}">{{ entry['artist']['name']}}</a></li>
         {% endfor %}
     </ul>
 {% endif %}
@@ -40,7 +40,6 @@
             <li><a href="{{ url_for('artist', artist_mbid = entry['artist']['id'] ) }}">{{ entry['artist']['name']}}</a></li>
         {% endfor %}
     </ul>
-    
 {% endif %}
 
 {% if member_of %}

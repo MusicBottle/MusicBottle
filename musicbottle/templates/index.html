@@ -1,20 +1,19 @@
 {% extends 'layout.html' %}
 
 {% block title %}
-    {{_('Welcome to MusicBottle') }}
+    {{ _('Welcome to MusicBottle') }}
 {% endblock %}
 
-
 {% block content %}
-    <h1>{{ _('Hello from The Bottle!') }}</h1>
-        <p>{{_('For testing purposes, here are a few artists:') }}</p>
+    <h1>{{  _('Hello from The Bottle!') }}</h1>
+        <p>{{ _('For testing purposes, here are a few artists:') }}</p>
         <ul style="list-type-none;">
-            <li><a href="{{ url_for('artist', artist_mbid = "79a09151-f6cc-48f9-9907-3fdd0b68373f" ) }}">Richard David James</a></li>
-            <li><a href="{{ url_for('artist', artist_mbid = "33f8e407-999d-4468-a63f-b487a98444bd" ) }}">The Rutles</a></li>
-            <li><a href="{{ url_for('artist', artist_mbid = "6c74516f-b42d-49c9-bd01-ab16b4391fee" ) }}">Larry and His Flask</a></li>
-            <li><a href="{{ url_for('artist', artist_mbid = "37463bf1-d77c-4702-b4db-642af32957a9" ) }}">Boot-led Zeppelin</a></li>
-            <li><a href="{{ url_for('artist', artist_mbid = "e20747e7-55a4-452e-8766-7b985585082d" ) }}">Frank Zappa</a></li>
-            <li><a href="{{ url_for('artist', artist_mbid = "5adb8b74-54b8-4700-836e-550b6a2a2f71" ) }}">Cat Stevens</a></li>
-            <li><a href="{{ url_for('artist', artist_mbid = "11137c88-a9a2-4ffa-a97d-fb058c6d6ce2" ) }}">Pigface</a></li>
+            <li><a href="{{ url_for('artist', artist_mbid = '79a09151-f6cc-48f9-9907-3fdd0b68373f' ) }}">Richard David James</a></li>
+            <li><a href="{{ url_for('artist', artist_mbid = '33f8e407-999d-4468-a63f-b487a98444bd' ) }}">The Rutles</a></li>
+            <li><a href="{{ url_for('artist', artist_mbid = '6c74516f-b42d-49c9-bd01-ab16b4391fee' ) }}">Larry and His Flask</a></li>
+            <li><a href="{{ url_for('artist', artist_mbid = '37463bf1-d77c-4702-b4db-642af32957a9' ) }}">Boot-led Zeppelin</a></li>
+            <li><a href="{{ url_for('artist', artist_mbid = 'e20747e7-55a4-452e-8766-7b985585082d' ) }}">Frank Zappa</a></li>
+            <li><a href="{{ url_for('artist', artist_mbid = '5adb8b74-54b8-4700-836e-550b6a2a2f71' ) }}">Cat Stevens</a></li>
+            <li><a href="{{ url_for('artist', artist_mbid = '11137c88-a9a2-4ffa-a97d-fb058c6d6ce2' ) }}">Pigface</a></li>
         </ul>
 {% endblock %}
