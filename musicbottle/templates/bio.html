@@ -29,28 +29,28 @@
 
 {# nb: at this point, I don't really care which is the "real name" so I'm ignoring direction of AR #}
 {% if other_names %}
-    {{_('AKA:')}}
+    {{ _('AKA:') }}
     <ul style="list-style-type:none; ">
         {% for entry in other_names %}
-            <li><a href="{{ url_for('artist', artist_mbid = entry['artist']['id'] ) }}">{{ entry['artist']['name']}}</a></li>
+            <li><a href="{{ url_for('artist', artist_mbid = entry['artist']['id']) }}">{{ entry['artist']['name'] }}</a></li>
         {% endfor %}
     </ul>
 {% endif %}
 
 {% if members %}
-    {{_('Members:')}}
+    {{ _('Members:') }}
     <ul style="list-style-type:none;">
         {% for entry in members %}
-            <li><a href="{{ url_for('artist', artist_mbid = entry['artist']['id'] ) }}">{{ entry['artist']['name']}}</a></li>
+            <li><a href="{{ url_for('artist', artist_mbid = entry['artist']['id']) }}">{{ entry['artist']['name']}}</a></li>
         {% endfor %}
     </ul>
 {% endif %}
 
 {% if member_of %}
-    {{_('Member of:')}}
+    {{ _('Member of:') }}
     <ul style="list-style-type:none;">
         {% for entry in member_of %}
-            <li><a href="{{ url_for('artist', artist_mbid = entry['artist']['id'] ) }}">{{ entry['artist']['name']}}</a></li>
+            <li><a href="{{ url_for('artist', artist_mbid = entry['artist']['id']) }}">{{ entry['artist']['name'] }}</a></li>
         {% endfor %}
     </ul>
 {% endif %}
