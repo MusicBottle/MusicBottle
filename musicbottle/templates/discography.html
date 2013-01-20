@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block title %}
-    {{ _('MusicBottle: Discography for ') }} {{-artist.data['name']}}
+    {{ _('MusicBottle: Discography for %(artist_name)s', artist_name=artist.data['name']) }}
 {% endblock %}
 
 {% block content %}
