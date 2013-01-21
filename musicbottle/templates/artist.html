@@ -1,21 +1,10 @@
-<!DOCTYPE html>
-
+{% extends "layout.html" %}
 {# make a "name" variable #}
-{% set name=artist.data['name'] %}
-
-<html  lang="en">
-    
-<head>
-        <title>{{ _('MusicBrainz Artist: %(title)s', title=name) }}</title>
-        <meta charset="UTF-8"/>
-        <meta name="description" content="">
-        <meta name="generator" content="Geany 1.22" />
-        <link rel="stylesheet" href="../static/bottle.css"  />
-        <script src="{{ url_for('static', filename='scripts/artist.js') }}" type="text/javascript"></script>
-</head>
-
-<body>
-     {% include  'header.html' %}
+{% set name = artist.data['name'] %}
+{% block title %}
+    {{ _('MusicBrainz Artist: %(title)s', title=name) }}
+{% endblock %}
+{% block content %}
     <section id="overview">
         <h2>{{
             _('%(title)s %(disambiguation)s', **{
@@ -25,44 +14,25 @@
                                   Markup('</span>'),
             })
         }}</h2>
-        <p id="wp-summary" style="text-align:justify;"></p>
-        <script>getWikiText({{artist.wikipedia[0]|tojson|safe}},{{artist.wikipedia[1]|tojson|safe}})</script>
-    </section>
-    <section id="discography">
-        <table style="width:100%;">
-            <tr>
-            {% set i = 0 %} {# This would probably be better in JS #}
-            {% set rows = 0 %}
-            {% for rg in artist.release_groups[''] %}
-                    {% set i = i + 1 %}
-                    {% if i > 5 %}
-                        {% set i = 1 %}
-                        {% set rows = rows + 1 %}
-                        </tr>
-                    {% endif %}
-
-                    {% if rows < 3 %}
-                        {% if i == 1 %}
-                            <tr>
-                        {% endif %}
-
-                        <td style="width:20%;">
-                            <img style="display:block; margin-left:auto; margin-right:auto; box-shadow: 8px 8px 4px #888888;" src="http://coverartarchive.org/beta/release-group/{{rg['data']['id']}}/front-250" width="90%" onerror='onImageError("{{ url_for('static', filename='images/') }}", this)'></img>
-                            </a>
-                    </br>
-                            <div style="text-align:center; padding:0; height:3.5em; border:0px; margin:0px">{{rg['data']['title']}}</br>{{rg['year']}}</div>
-                       </td>
-               {% endif %}
-            {% endfor %}
-            </tr>
-        </table>
+        <section id="bio">
+           {% include 'bio.html' %}
+        </section>
+        <section id="links">
+            <ul>
+                <li><a href="{{ url_for('discography', artist_mbid=artist.data['id']) }}">{{ _('Discography') }}</a></li> 
+                <li>{{ _('to do: figure out what subpages we want') }}</li>
+                <li><a href="http://musicbrainz.org/artist/{{artist.data['id'] }} ">{{ _('%(artist_name)s on MusicBrainz',
+                    artist_name=name,
+                ) }}</a></li>
+            </ul>
+        </section>
+        <article id="wiki">
+            <p id="wp-summary" style="text-align:justify;"></p>
+            <script>getWikiText({{artist.wikipedia[0]|tojson|safe}},{{artist.wikipedia[1]|tojson|safe}})</script>
+        </article>
     </section>
     <section id="debug">
-        <h3>{{ _('Debug information') }}</h3>
-        <h4>{{ _('Dump as JSON data') }}</h4>
-        <pre>{{artist.debug_json}}</pre>
+        <!-- full json dump for debugging, to be removed -->
+        {% include 'debug.html' %}
     </section>
-   {% include  'footer.html' %}
-</body>
-
-</html>
+{% endblock %}
