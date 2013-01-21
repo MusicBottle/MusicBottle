@@ -1,0 +1,56 @@
+{# included in 'artist.html' #}
+
+{# short variable names for readability #}
+{% set begin = artist.data['life-span']['begin'] %}
+{% set end = artist.data['life-span']['end'] %}
+{% set relations = artist.data['relations'] %}
+
+{# lists for sorting relationship types #}
+{% set other_names = [] %}
+{% set members = [] %}
+{% set member_of = [] %}
+{% set collaborators = [] %}
+
+{# loop through ARs and sort them into lists (above) for display #}
+{# nb: append method works only with "do" #}
+{% for relation in relations -%}
+    {% if relation['type'] == "is person" %} {# nb: ignoring direction for now, "all names are equal" #}
+        {% do other_names.append(relation) %}
+    {% endif %}
+    {% if relation['type'] == "member of band" %}
+        {% if relation['direction'] == "forward" %}
+            {% do member_of.append(relation) %}
+        {% endif %}
+        {%if relation['direction'] == "backward" %}
+            {% do members.append(relation) %}
+        {% endif %}
+    {% endif %}
+{%- endfor %}
+
+{# nb: at this point, I don't really care which is the "real name" so I'm ignoring direction of AR #}
+{% if other_names %}
+    {{ _('AKA:') }}
+    <ul style="list-style-type:none; ">
+        {% for entry in other_names %}
+            <li><a href="{{ url_for('artist', artist_mbid = entry['artist']['id']) }}">{{ entry['artist']['name'] }}</a></li>
+        {% endfor %}
+    </ul>
+{% endif %}
+
+{% if members %}
+    {{ _('Members:') }}
+    <ul style="list-style-type:none;">
+        {% for entry in members %}
+            <li><a href="{{ url_for('artist', artist_mbid = entry['artist']['id']) }}">{{ entry['artist']['name']}}</a></li>
+        {% endfor %}
+    </ul>
+{% endif %}
+
+{% if member_of %}
+    {{ _('Member of:') }}
+    <ul style="list-style-type:none;">
+        {% for entry in member_of %}
+            <li><a href="{{ url_for('artist', artist_mbid = entry['artist']['id']) }}">{{ entry['artist']['name'] }}</a></li>
+        {% endfor %}
+    </ul>
+{% endif %}
