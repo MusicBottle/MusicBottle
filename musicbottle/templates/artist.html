@@ -2,7 +2,7 @@
 {# make a "name" variable #}
 {% set name = artist.data['name'] %}
 {% block title %}
-    {{ _('MusicBrainz Artist: %(title)s', title = name) }}
+    {{ _('MusicBrainz Artist: %(title)s', title=name) }}
 {% endblock %}
 {% block content %}
     <section id="overview">
@@ -23,7 +23,7 @@
                 <li>{{ _('to do: figure out what subpages we want') }}</li>
                 <li><a href="http://musicbrainz.org/artist/{{artist.data['id'] }} ">{{ _('%(artist_name)s on MusicBrainz',
                     artist_name=name,
-                )}}</a></li>
+                ) }}</a></li>
             </ul>
         </section>
         <article id="wiki">
@@ -31,9 +31,8 @@
             <script>getWikiText({{artist.wikipedia[0]|tojson|safe}},{{artist.wikipedia[1]|tojson|safe}})</script>
         </article>
     </section>
-        <section id="debug">
+    <section id="debug">
         <!-- full json dump for debugging, to be removed -->
         {% include 'debug.html' %}
     </section>
 {% endblock %}
-    
