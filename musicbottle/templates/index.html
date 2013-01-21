@@ -7,7 +7,7 @@
 {% block content %}
     <h1>{{ _('Hello from The Bottle!') }}</h1>
     <p>{{ _('For testing purposes, here are a few artists:') }}</p>
-    <ul style="list-type-none;">
+    <ul style="list-style: none;">
         <li><a href="{{ url_for('artist', artist_mbid='79a09151-f6cc-48f9-9907-3fdd0b68373f') }}">Richard David James</a></li>
         <li><a href="{{ url_for('artist', artist_mbid='33f8e407-999d-4468-a63f-b487a98444bd') }}">The Rutles</a></li>
         <li><a href="{{ url_for('artist', artist_mbid='6c74516f-b42d-49c9-bd01-ab16b4391fee') }}">Larry and His Flask</a></li>
