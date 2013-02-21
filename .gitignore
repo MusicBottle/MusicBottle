@@ -1,3 +1,4 @@
 /*env/
 *.pyc
+*.mo
 nosetests.xml
