@@ -1,8 +1,8 @@
 {# included in artist.html #}
-        <h3>{{ _('Debug information') }}</h3>
-        <h4>{{ _('Dump as JSON data') }}</h4>
+        <h3 id="debug">{{ _('Debug information') }}</h3>
+        <h4 id="debug-json">{{ _('Dump as JSON data') }}</h4>
         <pre>{{artist.debug_json}}</pre>
-        <h4>{{ _('Dump as a definition list') }}</h4>
+        <h4 id="debug-dl">{{ _('Dump as a definition list') }}</h4>
         <dl>
         {% for key, value in artist.data.items() recursive %}
             {%- set mainloop = loop -%}
