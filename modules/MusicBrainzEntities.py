@@ -54,7 +54,7 @@ class Artist(MusicBrainzEntity):
         self.wikipedia = ("", "")  # Tuple format - text, domain
         for a in self.data['relations']:
             if a['type'] == "wikipedia":
-                [domain, page_name] = a['url'].split("/wiki/")
+                [domain, page_name] = a['url']['resource'].split("/wiki/")
                 fetched_wikipedia = self.fetch_wikipedia(page_name, domain)
                 self.wikipedia = fetched_wikipedia["parse"]["text"]['*']
                 summary_start = self.wikipedia.find("<p>")+3
