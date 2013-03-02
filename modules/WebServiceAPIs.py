@@ -10,8 +10,9 @@ class WebServiceAPI(object):
     - Is the site available via HTTP, HTTPS, something else?
     - What kind of data does it return (JSON, XML, ...)?
     - """
-    def __init__(self):
-        pass
+    def __init__(self, url):
+        self.url = url
+        self.response = self.call(url)
 
     def create_request_url(self):
         """Placeholder function."""
