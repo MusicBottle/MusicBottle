@@ -33,8 +33,7 @@ virtual environment::
 
 Install download and install the required dependencies::
 
-    pip install -U --download-cache=/tmp/pip -I -r requirements.txt --no-install
-    pip install -U --download-cache=/tmp/pip -I -r requirements.txt --no-download
+    pip install --upgrade --ignore-installed --use-mirrors --download-cache=/tmp/pip -r requirements.txt
 
 Running MusicBottle
 -------------------
