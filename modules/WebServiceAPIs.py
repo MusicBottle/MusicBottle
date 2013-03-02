@@ -21,6 +21,14 @@ class WebServiceAPI(object):
     def call(self, url):
         return urllib2.urlopen(url)
 
+    def get_data(self):
+        """Get Python readable data from the web service.
+
+        This should be overwritten by child classes to format the data
+        relevant to their specific service."""
+
+        return self.response.read()
+
 
 class MediaWikiAPI(WebServiceAPI):
     """Parent class for MediaWiki based sites."""
