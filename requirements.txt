@@ -9,8 +9,6 @@ speaklater
 Babel
 Flask-Babel
 
-transifex-client
-
 twill
 Flask-Testing
 nose
