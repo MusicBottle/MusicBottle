@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    {{request.args.query}} {{_('MusicBottle %s search' %(request.args.type), title=name)}}
+{% endblock %}
+
+{% block search_form %}{% endblock %}
+
+{% block content %}
+    <section>
+        {% include 'search_form.html' %}
+    </section>
+    <section>
+        {{results}}
+    </section>
+{% endblock %}

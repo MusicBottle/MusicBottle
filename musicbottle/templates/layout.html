@@ -11,9 +11,15 @@
     <header>
         {% include  'header.html' %}
     </header>
+
+    {% block search_form %}
+        <section align="right">{% include 'search_form.html' %}</section>
+    {% endblock %}
+
     <section id="content">
         {% block content %} {% endblock %}
     </section>
+
     <footer>
         {% include  'footer.html' %}
     </footer>
