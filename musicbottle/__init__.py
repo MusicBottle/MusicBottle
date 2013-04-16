@@ -7,6 +7,7 @@ The MusicBottle website.
 
 # Regular Python imports
 from os import getenv
+import urllib
 
 # Using simplejson (faster) if available otherwise using stdlib json.
 try:
@@ -70,10 +71,11 @@ def musicbottle_search():
     typ = request.args.get('type','artist')
     query = request.args.get('query')
     if typ and query:
-		# NOTE: I was getting <UnicodeDecodeError> from MusicBrainzAPI().response()
-		# .read() thats why added .decode("utf-8", "replace"))
-        results = json.loads(MusicBrainzAPI('%s?query=%s&fmt=json' 
-             %(typ,query)).response.read().decode("utf-8", "replace"))
+        # NOTE: I was getting <UnicodeDecodeError> from MusicBrainzAPI().response()
+        # .read() thats why added .decode("utf-8", "replace"))
+        params = {'fmt':'json', 'query':query}
+        results = json.loads(MusicBrainzAPI('%s?%s' 
+             %(typ,urllib.urlencode(params))).response.read().decode("utf-8", "replace"))
         results['type']=typ
     else:
         results = {}
