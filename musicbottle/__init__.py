@@ -66,16 +66,18 @@ def musicbottle_release(release_mbid):
     release = Release(release_mbid, app.config['MUSICBRAINZ_SERVER'])
     return render_template('release.html', release=release)
 
+
 @app.route('/search/')
 def musicbottle_search():
     type = request.args.get('type', 'artist')
     query = request.args.get('query')
     if type and query:
-        # NOTE: I was getting <UnicodeDecodeError> from MusicBrainzAPI().response()
-        # .read() thats why added .decode("utf-8", "replace"))
+        # NOTE: I was getting <UnicodeDecodeError> from MusicBrainzAPI().
+        # response().read() thats why added .decode("utf-8", "replace"))
         params = {'fmt': 'json', 'query': query}
-        results = json.loads(MusicBrainzAPI('%s?%s' 
-             %(type, urllib.urlencode(params))).response.read().decode("utf-8", "replace"))
+        results = json.loads(MusicBrainzAPI('%s?%s' % (type, urllib.
+                             urlencode(params))).response.read().
+                             decode("utf-8", "replace"))
         results['type'] = type
     else:
         results = {}
