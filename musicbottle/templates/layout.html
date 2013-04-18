@@ -10,11 +10,10 @@
 <body>
     <header>
         {% include  'header.html' %}
+        {% block search_form %}
+            <section align="right">{% include 'search_form.html' %}</section>
+        {% endblock %}
     </header>
-
-    {% block search_form %}
-        <section align="right">{% include 'search_form.html' %}</section>
-    {% endblock %}
 
     <section id="content">
         {% block content %} {% endblock %}

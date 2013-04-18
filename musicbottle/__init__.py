@@ -7,13 +7,6 @@ The MusicBottle website.
 
 # Regular Python imports
 from os import getenv
-import urllib
-
-# Using simplejson (faster) if available otherwise using stdlib json.
-try:
-    import simplejson as json
-except ImportError:
-    import json
 
 # Flask imports
 from flask import Flask, request, render_template
@@ -21,6 +14,7 @@ from flask.ext.babel import Babel
 
 # MusicBottle imports
 from modules.MusicBrainzEntities import *
+from modules.WebServiceAPIs import musicbrainz_search
 
 # Setup Flask
 app = Flask(__name__)
@@ -72,13 +66,7 @@ def musicbottle_search():
     type = request.args.get('type', 'artist')
     query = request.args.get('query')
     if type and query:
-        # NOTE: I was getting <UnicodeDecodeError> from MusicBrainzAPI().
-        # response().read() thats why added .decode("utf-8", "replace"))
-        params = {'fmt': 'json', 'query': query}
-        results = json.loads(MusicBrainzAPI('%s?%s' % (type, urllib.
-                             urlencode(params))).response.read().
-                             decode("utf-8", "replace"))
-        results['type'] = type
+        results = musicbrainz_search(type, {'query': query, 'fmt': 'json'})
     else:
         results = {}
     return render_template('search.html', results=results)

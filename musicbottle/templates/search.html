@@ -10,7 +10,7 @@
     <section>
         {% include 'search_form.html' %}
     </section>
-    <section>
-        {{results}}
+    <section id="debug">
+        <pre>{{results|pprint()}}<pre>
     </section>
 {% endblock %}

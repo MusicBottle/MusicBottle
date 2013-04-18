@@ -3,6 +3,13 @@
 """MusicBottle WebServiceAPIs"""
 
 import urllib2
+import urllib
+
+# Using simplejson (faster) if available otherwise using stdlib json.
+try:
+    import simplejson as json
+except ImportError:
+    import json
 
 
 class WebServiceAPI(object):
@@ -74,3 +81,20 @@ class MusicBrainzAPI(WebServiceAPI):
         self.request = request
         self.request_url = server + '/ws/2/' + request
         self.response = self.call(self.request_url)
+
+
+def musicbrainz_search(type, parameters):
+    """Returns a dictionary of search results from MusicBrainz API. Takes two
+    inputs, type (entity type) and parameters (a dictionary of search
+    parameters)
+    """
+    if type and parameters.get('query', ''):
+        # NOTE: I was getting <UnicodeDecodeError> from MusicBrainzAPI().
+        # response().read() thats why added .decode("utf-8", "replace"))
+        results = json.loads(MusicBrainzAPI('%s?%s' % (type, urllib.
+                             urlencode(parameters))).response.read().
+                             decode("utf-8", "replace"))
+        results['type'] = type
+    else:
+        results = {}
+    return results
