@@ -86,7 +86,7 @@ class MusicBrainzAPI(WebServiceAPI):
 def musicbrainz_search(type, parameters):
     """Returns a dictionary of search results from MusicBrainz API. Takes two
     inputs, type (entity type) and parameters (a dictionary of search
-    parameters)
+    parameters).
     """
     if type and parameters.get('query', ''):
         # NOTE: I was getting <UnicodeDecodeError> from MusicBrainzAPI().
