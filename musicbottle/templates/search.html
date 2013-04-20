@@ -10,6 +10,20 @@
     <section>
         {% include 'search_form.html' %}
     </section>
+    <section>
+        {% if results.type == 'artist'%}
+            <h4>{{_('Artists')}}</h4>
+            {% if results.artist %}
+                <ul style="list-style:none">
+                    {% for artist in results.artist %}
+                        <li><a href="{{ url_for('artist', artist_mbid=artist.id) }}">{{artist.name}}</a></li>
+                    {% endfor %}
+                </ul>
+            {% else %}
+                <div>{{_('No Artist found.')}}</div>
+            {% endif %}
+        {% endif %}
+    </section>
     <section id="debug">
         <pre>{{results|pprint()}}<pre>
     </section>
