@@ -28,7 +28,7 @@ Obtain the latest sources and navigate to them::
 If you decided to go with with using ``virtualenv``, now is a good time to make a
 virtual environment::
 
-    virtualenv venv
+    virtualenv -p python2 venv
     . venv/bin/activate
 
 Install download and install the required dependencies::
@@ -44,8 +44,6 @@ the server.
 You can run ``python manage.py runserver -h`` to see a list of options for
 starting the server. E.g., if you need to run it on a different port than
 the default.
-
-If the commands above give errors, try using ``python2`` instead of ``python``.
 
 Configuring MusicBottle
 -----------------------
