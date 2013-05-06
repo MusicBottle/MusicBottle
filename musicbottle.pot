@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MusicBottle VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2013-03-11 17:17+0100\n"
+"POT-Creation-Date: 2013-05-06 22:43+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,22 +18,40 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 0.9.6\n"
 
-#: musicbottle/templates/artist.html:9
+#: musicbottle/templates/artist.html:5
 #, python-format
 msgid "MusicBrainz Artist: %(title)s"
 msgstr ""
 
-#: musicbottle/templates/artist.html:21
+#: musicbottle/templates/artist.html:10
 #, python-format
 msgid "%(title)s %(disambiguation)s"
 msgstr ""
 
-#: musicbottle/templates/artist.html:61 musicbottle/templates/release.html:37
+#: musicbottle/templates/artist.html:22
+msgid "Discography"
+msgstr ""
+
+#: musicbottle/templates/artist.html:23
+msgid "to do: figure out what subpages we want"
+msgstr ""
+
+#: musicbottle/templates/artist.html:24
+#, python-format
+msgid "%(artist_name)s on MusicBrainz"
+msgstr ""
+
+#: musicbottle/templates/debug.html:2 musicbottle/templates/release.html:37
 msgid "Debug information"
 msgstr ""
 
-#: musicbottle/templates/artist.html:62
+#: musicbottle/templates/debug.html:3
 msgid "Dump as JSON data"
+msgstr ""
+
+#: musicbottle/templates/discography.html:4
+#, python-format
+msgid "MusicBottle: Discography for %(artist_name)s"
 msgstr ""
 
 #: musicbottle/templates/footer.html:2
@@ -44,8 +62,16 @@ msgstr ""
 msgid "MusicBottle"
 msgstr ""
 
-#: musicbottle/templates/index.html:6 musicbottle/templates/index.html:12
+#: musicbottle/templates/index.html:4
+msgid "Welcome to MusicBottle"
+msgstr ""
+
+#: musicbottle/templates/index.html:8
 msgid "Hello from The Bottle!"
+msgstr ""
+
+#: musicbottle/templates/index.html:9
+msgid "For testing purposes, here are a few artists:"
 msgstr ""
 
 #: musicbottle/templates/release.html:9
@@ -73,7 +99,7 @@ msgid "Coming soon: lots of crap about %(title)s!"
 msgstr ""
 
 #: musicbottle/templates/release.html:38
-msgid "Dump as defintion list"
+msgid "Dump as definition list"
 msgstr ""
 
 #: musicbottle/templates/release.html:45
