@@ -25,8 +25,8 @@ Obtain the latest sources and navigate to them::
     git clone https://github.com/Freso/MusicBottle.git
     cd MusicBottle
 
-If you decided to go with with using ``virtualenv``, now is a good time to make a
-virtual environment::
+If you decided to go with with using ``virtualenv``, now is a good time to make
+a virtual environment [#python2]_ ::
 
     virtualenv -p python2 venv
     . venv/bin/activate
@@ -34,6 +34,10 @@ virtual environment::
 Install download and install the required dependencies::
 
     pip install --upgrade --ignore-installed --use-mirrors --download-cache=/tmp/pip -r requirements.txt
+
+.. [#python2] If you're using Debian or another distribution that does not have
+   ``python2``, you will need to adjust "``python2``" to the path of a Python
+   version 2 executable on your system.
 
 Running MusicBottle
 -------------------
