@@ -89,6 +89,7 @@ def musicbrainz_search(type, parameters):
     parameters).
     """
     if type and parameters.get('query', ''):
+        parameters['fmt'] = 'json'
         # NOTE: I was getting <UnicodeDecodeError> from MusicBrainzAPI().
         # response().read() thats why added .decode("utf-8", "replace"))
         results = json.loads(MusicBrainzAPI('%s?%s' % (type, urllib.

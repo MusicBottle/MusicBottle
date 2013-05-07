@@ -61,12 +61,12 @@ def musicbottle_release(release_mbid):
     return render_template('release.html', release=release)
 
 
-@app.route('/search/')
+@app.route('/search/', endpoint='search')
 def musicbottle_search():
     type = request.args.get('type', 'artist')
     query = request.args.get('query')
     if type and query:
-        results = musicbrainz_search(type, {'query': query, 'fmt': 'json'})
+        results = musicbrainz_search(type, {'query': query})
     else:
         results = {}
     return render_template('search.html', results=results)
