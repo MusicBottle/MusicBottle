@@ -1,0 +1,96 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    {{request.args.query}} {{_('MusicBottle %s search' %(request.args.type), title=name)}}
+{% endblock %}
+
+{% block search_form %}{% endblock %}
+
+{% block content %}
+    <section>
+        {% include 'search_form.html' %}
+    </section>
+    <section>
+        {% if results.type == 'artist'%}
+            <h4>{{_('Artists')}}</h4>
+            {% if results.artist %}
+                <ul style="list-style:none">
+                    {% for artist in results.artist %}
+                        <li><a href="{{ url_for('artist', artist_mbid=artist.id) }}">{{artist.name}}</a></li>
+                    {% endfor %}
+                </ul>
+            {% else %}
+                <div>{{_('No Artist found.')}}</div>
+            {% endif %}
+        {% endif %}
+
+        {% if results.type == 'release-group'%}
+            <h4>{{_('Release groups')}}</h4>
+            {% if results.get('release-group') %}
+                {% with release_groups = results.get('release-group') %}
+                    <ul style="list-style:none">
+                        {% for release_group in release_groups %}
+                            <li>
+                                <a href="#">
+                                    {{release_group.title}} -
+                                    {% for artist in release_group.get('artist-credit','') %}
+                                        {{artist.artist.name}}{% if not loop.last %}, {% endif %}
+                                    {% endfor %}
+                                </a>
+                            </li>
+                        {% endfor %}
+                    </ul> 
+                {% endwith %}
+
+            {% else %}
+                <div>{{_('No Recording found.')}}</div>
+            {% endif %}
+
+        {% endif %}
+
+        {% if results.type == 'label'%}
+            <h4>{{_('Labels')}}</h4>
+            {% if results.labels %}
+                {% with labels = results.labels %}
+                    <ul style="list-style:none">
+                        {% for label in labels %}
+                            <li>
+                                <a href="#">{{label.name}}</a>
+                                {% if label.disambiguation %} - {{label.disambiguation}}{% endif %}
+                            </li>
+                        {% endfor %}
+                    </ul>  
+                {% endwith %}
+            {% else %}
+                <div>{{_('No Label found.')}}</div>
+            {% endif %}
+        {% endif %}
+
+        {% if results.type == 'recording'%}
+            <h4>{{_('Recordings')}}</h4>
+            {% if results.recording %}
+                {% with recordings = results.recording %}
+                    <ul style="list-style:none">
+                        {% for recording in recordings %}
+                            <li>
+                                <a href="#">
+                                    {{recording.title}} -
+                                    {% for artist in recording.get('artist-credit','') %}
+                                        {{artist.artist.name}}{% if not loop.last %}, {% endif %}
+                                    {% endfor %}
+                                </a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                {% endwith %}
+            {% else %}
+                <div>{{_('No Recording found.')}}</div>
+            {% endif %}
+        {% endif %}
+    </section>
+
+    <section id="debug">
+        <h3> {{_("Debug: Python 'results' object")}}</h3>
+        <pre>{{results|pprint()}}</pre>
+    </section>
+{% endblock %}

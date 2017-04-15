@@ -14,6 +14,7 @@ from flask.ext.babel import Babel
 
 # MusicBottle imports
 from modules.MusicBrainzEntities import *
+from modules.WebServiceAPIs import musicbrainz_search
 
 # Setup Flask
 app = Flask(__name__)
@@ -58,6 +59,17 @@ def musicbottle_artist_discography(artist_mbid):
 def musicbottle_release(release_mbid):
     release = Release(release_mbid, app.config['MUSICBRAINZ_SERVER'])
     return render_template('release.html', release=release)
+
+
+@app.route('/search/', endpoint='search')
+def musicbottle_search():
+    type = request.args.get('type', 'artist')
+    query = request.args.get('query')
+    if type and query:
+        results = musicbrainz_search(type, {'query': query})
+    else:
+        results = {}
+    return render_template('search.html', results=results)
 
 
 @app.context_processor
