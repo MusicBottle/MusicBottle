@@ -9,8 +9,8 @@ msgstr ""
 "Project-Id-Version: MusicBottle VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2013-05-06 22:43+0200\n"
-"PO-Revision-Date: 2020-04-03 07:25+0000\n"
-"Last-Translator: Jeannette L <j.lavoie@net-c.ca>\n"
+"PO-Revision-Date: 2020-07-13 04:41+0000\n"
+"Last-Translator: John Vandenhaute <john.vdhaute@outlook.be>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/musicbottle/"
 "master/fr/>\n"
 "Language: fr\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 4.0-dev\n"
+"X-Generator: Weblate 4.2-dev\n"
 "Generated-By: Babel 0.9.6\n"
 
 #: musicbottle/templates/artist.html:5
@@ -49,9 +49,8 @@ msgid "Debug information"
 msgstr "Informations de débogage"
 
 #: musicbottle/templates/debug.html:3
-#, fuzzy
 msgid "Dump as JSON data"
-msgstr "Vider comme données JSON"
+msgstr "Transférer en données JSON"
 
 #: musicbottle/templates/discography.html:4
 #, python-format
@@ -103,13 +102,12 @@ msgid "Coming soon: lots of crap about %(title)s!"
 msgstr "À venir : beaucoup de merde à propos de %(title)s !"
 
 #: musicbottle/templates/release.html:38
-#, fuzzy
 msgid "Dump as definition list"
-msgstr "Vider comme liste de définition"
+msgstr "Transférer en liste de définition"
 
 #: musicbottle/templates/release.html:45
 msgid "Raw dump of release.data"
-msgstr ""
+msgstr "Transférer release.data en brut"
 
 #: musicbottle/templates/release.html:49
 msgid "©2012"
