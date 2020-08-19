@@ -9,13 +9,16 @@ msgstr ""
 "Project-Id-Version: MusicBottle VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2013-05-06 22:43+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2020-08-19 08:41+0000\n"
+"Last-Translator: Michel Smit <michel@ichicraft.com>\n"
+"Language-Team: German <https://hosted.weblate.org/projects/musicbottle/"
+"master/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.2-dev\n"
 "Generated-By: Babel 0.9.6\n"
 
 #: musicbottle/templates/artist.html:5
@@ -34,25 +37,25 @@ msgstr ""
 
 #: musicbottle/templates/artist.html:23
 msgid "to do: figure out what subpages we want"
-msgstr ""
+msgstr "zu tun: herauszufinden, welche Unterseiten wir wollen"
 
 #: musicbottle/templates/artist.html:24
 #, python-format
 msgid "%(artist_name)s on MusicBrainz"
-msgstr ""
+msgstr "%(artist_name)s auf MusicBrainz"
 
 #: musicbottle/templates/debug.html:2 musicbottle/templates/release.html:37
 msgid "Debug information"
-msgstr ""
+msgstr "Informationen zur Fehlersuche"
 
 #: musicbottle/templates/debug.html:3
 msgid "Dump as JSON data"
-msgstr ""
+msgstr "Als JSON-Daten sichern"
 
 #: musicbottle/templates/discography.html:4
 #, python-format
 msgid "MusicBottle: Discography for %(artist_name)s"
-msgstr ""
+msgstr "MusicBottle: Diskographie für %(artist_name)s"
 
 #: musicbottle/templates/footer.html:2
 msgid "©2012 FresoBrainz"
