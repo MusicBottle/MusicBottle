@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: MusicBottle VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2013-05-06 22:43+0200\n"
-"PO-Revision-Date: 2020-09-30 09:08+0000\n"
+"PO-Revision-Date: 2020-10-01 09:40+0000\n"
 "Last-Translator: Atrate <Atrate@protonmail.com>\n"
 "Language-Team: Polish <https://hosted.weblate.org/projects/musicbottle/"
 "master/pl/>\n"
@@ -38,7 +38,7 @@ msgstr "Dyskografia"
 
 #: musicbottle/templates/artist.html:23
 msgid "to do: figure out what subpages we want"
-msgstr "zrobić: dowiedzieć się, jakie podstrony chcemy"
+msgstr "do zrobienia: dowiedzieć się, jakie podstrony chcemy"
 
 #: musicbottle/templates/artist.html:24
 #, python-format
@@ -90,9 +90,9 @@ msgid "A Basic Bottled Release"
 msgstr ""
 
 #: musicbottle/templates/release.html:24
-#, python-format
+#, fuzzy, python-format
 msgid "%(title)s —%(disambiguation)s"
-msgstr ""
+msgstr "%(title)s —%(disambiguation)s"
 
 #: musicbottle/templates/release.html:32
 #, python-format
@@ -109,9 +109,10 @@ msgid "Dump as definition list"
 msgstr ""
 
 #: musicbottle/templates/release.html:45
+#, fuzzy
 msgid "Raw dump of release.data"
-msgstr ""
+msgstr "Surowy zrzut danych release.data"
 
 #: musicbottle/templates/release.html:49
 msgid "©2012"
-msgstr ""
+msgstr "©2012"
