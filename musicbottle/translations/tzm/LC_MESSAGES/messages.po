@@ -9,28 +9,31 @@ msgstr ""
 "Project-Id-Version: MusicBottle VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2013-05-06 22:43+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2020-10-19 05:26+0000\n"
+"Last-Translator: Hakim Oubouali <hakim.oubouali.skr@gmail.com>\n"
+"Language-Team: Central Atlas Tamazight <https://hosted.weblate.org/projects/"
+"musicbottle/master/tzm/>\n"
 "Language: tzm\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n >= 2 && (n < 11 || n > 99);\n"
+"X-Generator: Weblate 4.3.1-dev\n"
 "Generated-By: Babel 0.9.6\n"
 
 #: musicbottle/templates/artist.html:5
 #, python-format
 msgid "MusicBrainz Artist: %(title)s"
-msgstr ""
+msgstr "Aẓawan n MusicBrainz: %(title)s"
 
 #: musicbottle/templates/artist.html:10
 #, python-format
 msgid "%(title)s %(disambiguation)s"
-msgstr ""
+msgstr "%(title)s %(disambiguation)s"
 
 #: musicbottle/templates/artist.html:22
 msgid "Discography"
-msgstr ""
+msgstr "Adiskuwenɣa"
 
 #: musicbottle/templates/artist.html:23
 msgid "to do: figure out what subpages we want"
@@ -39,36 +42,36 @@ msgstr ""
 #: musicbottle/templates/artist.html:24
 #, python-format
 msgid "%(artist_name)s on MusicBrainz"
-msgstr ""
+msgstr "%(artist_name)s g MusicBrainz"
 
 #: musicbottle/templates/debug.html:2 musicbottle/templates/release.html:37
 msgid "Debug information"
-msgstr ""
+msgstr "Umalen n udibug"
 
 #: musicbottle/templates/debug.html:3
 msgid "Dump as JSON data"
-msgstr ""
+msgstr "Seḍer am isefra JSON"
 
 #: musicbottle/templates/discography.html:4
 #, python-format
 msgid "MusicBottle: Discography for %(artist_name)s"
-msgstr ""
+msgstr "MusicBottle: Adiskuwenɣa i %(artist_name)s"
 
 #: musicbottle/templates/footer.html:2
 msgid "©2012 FresoBrainz"
-msgstr ""
+msgstr "©2012 FresoBrainz"
 
 #: musicbottle/templates/header.html:2
 msgid "MusicBottle"
-msgstr ""
+msgstr "MusicBottle"
 
 #: musicbottle/templates/index.html:4
 msgid "Welcome to MusicBottle"
-msgstr ""
+msgstr "Brrek g MusicBottle"
 
 #: musicbottle/templates/index.html:8
 msgid "Hello from The Bottle!"
-msgstr ""
+msgstr "Azul seg The Bottle!"
 
 #: musicbottle/templates/index.html:9
 msgid "For testing purposes, here are a few artists:"
@@ -77,7 +80,7 @@ msgstr ""
 #: musicbottle/templates/release.html:9
 #, python-format
 msgid "MusicBrainz Release: %(title)s!"
-msgstr ""
+msgstr "Taleqqimt MusicBrainz: %(title)s!"
 
 #: musicbottle/templates/release.html:22
 msgid "A Basic Bottled Release"
@@ -86,12 +89,12 @@ msgstr ""
 #: musicbottle/templates/release.html:24
 #, python-format
 msgid "%(title)s —%(disambiguation)s"
-msgstr ""
+msgstr "%(title)s —%(disambiguation)s"
 
 #: musicbottle/templates/release.html:32
 #, python-format
 msgid "%(title)s Cover"
-msgstr ""
+msgstr "%(title)s Amerru"
 
 #: musicbottle/templates/release.html:34
 #, python-format
@@ -108,4 +111,4 @@ msgstr ""
 
 #: musicbottle/templates/release.html:49
 msgid "©2012"
-msgstr ""
+msgstr "©2012"
