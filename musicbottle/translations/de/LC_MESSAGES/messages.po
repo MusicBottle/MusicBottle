@@ -9,8 +9,8 @@ msgstr ""
 "Project-Id-Version: MusicBottle VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2013-05-06 22:43+0200\n"
-"PO-Revision-Date: 2020-08-19 08:41+0000\n"
-"Last-Translator: Michel Smit <michel@ichicraft.com>\n"
+"PO-Revision-Date: 2020-10-22 02:26+0000\n"
+"Last-Translator: J. Lavoie <j.lavoie@net-c.ca>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/musicbottle/"
 "master/de/>\n"
 "Language: de\n"
@@ -18,22 +18,22 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.2-dev\n"
+"X-Generator: Weblate 4.3.1\n"
 "Generated-By: Babel 0.9.6\n"
 
 #: musicbottle/templates/artist.html:5
 #, python-format
 msgid "MusicBrainz Artist: %(title)s"
-msgstr ""
+msgstr "MusicBrainz-Künstler/in: %(title)s"
 
 #: musicbottle/templates/artist.html:10
 #, python-format
 msgid "%(title)s %(disambiguation)s"
-msgstr ""
+msgstr "%(title)s·%(disambiguation)s"
 
 #: musicbottle/templates/artist.html:22
 msgid "Discography"
-msgstr ""
+msgstr "Diskografie"
 
 #: musicbottle/templates/artist.html:23
 msgid "to do: figure out what subpages we want"
@@ -59,28 +59,28 @@ msgstr "MusicBottle: Diskographie für %(artist_name)s"
 
 #: musicbottle/templates/footer.html:2
 msgid "©2012 FresoBrainz"
-msgstr ""
+msgstr "© 2012 FresoBrainz"
 
 #: musicbottle/templates/header.html:2
 msgid "MusicBottle"
-msgstr ""
+msgstr "MusicBottle"
 
 #: musicbottle/templates/index.html:4
 msgid "Welcome to MusicBottle"
-msgstr ""
+msgstr "Willkommen bei MusicBottle"
 
 #: musicbottle/templates/index.html:8
 msgid "Hello from The Bottle!"
-msgstr ""
+msgstr "Hallo aus The Bottle!"
 
 #: musicbottle/templates/index.html:9
 msgid "For testing purposes, here are a few artists:"
-msgstr ""
+msgstr "Zu Testzwecken sind hier einige Künstler/innen aufgeführt:"
 
 #: musicbottle/templates/release.html:9
 #, python-format
 msgid "MusicBrainz Release: %(title)s!"
-msgstr ""
+msgstr "MusicBrainz-Veröffentlichung: %(title)s!"
 
 #: musicbottle/templates/release.html:22
 msgid "A Basic Bottled Release"
@@ -89,17 +89,17 @@ msgstr ""
 #: musicbottle/templates/release.html:24
 #, python-format
 msgid "%(title)s —%(disambiguation)s"
-msgstr ""
+msgstr "%(title)s – %(disambiguation)s"
 
 #: musicbottle/templates/release.html:32
 #, python-format
 msgid "%(title)s Cover"
-msgstr ""
+msgstr "Wiederaufnahme von %(title)s"
 
 #: musicbottle/templates/release.html:34
 #, python-format
 msgid "Coming soon: lots of crap about %(title)s!"
-msgstr ""
+msgstr "Bald erhältlich: viel Mist über %(title)s!"
 
 #: musicbottle/templates/release.html:38
 msgid "Dump as definition list"
@@ -111,4 +111,4 @@ msgstr ""
 
 #: musicbottle/templates/release.html:49
 msgid "©2012"
-msgstr ""
+msgstr "© 2012"
