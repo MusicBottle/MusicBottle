@@ -9,13 +9,16 @@ msgstr ""
 "Project-Id-Version: MusicBottle VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2013-05-06 22:43+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2020-11-10 13:28+0000\n"
+"Last-Translator: Ludovico Besana <ludovicobesanaguide@gmail.com>\n"
+"Language-Team: Italian <https://hosted.weblate.org/projects/musicbottle/"
+"master/it/>\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.4-dev\n"
 "Generated-By: Babel 0.9.6\n"
 
 #: musicbottle/templates/artist.html:5
@@ -30,7 +33,7 @@ msgstr ""
 
 #: musicbottle/templates/artist.html:22
 msgid "Discography"
-msgstr ""
+msgstr "Discografia"
 
 #: musicbottle/templates/artist.html:23
 msgid "to do: figure out what subpages we want"
@@ -43,7 +46,7 @@ msgstr ""
 
 #: musicbottle/templates/debug.html:2 musicbottle/templates/release.html:37
 msgid "Debug information"
-msgstr ""
+msgstr "Informazioni di debug"
 
 #: musicbottle/templates/debug.html:3
 msgid "Dump as JSON data"
@@ -56,15 +59,15 @@ msgstr ""
 
 #: musicbottle/templates/footer.html:2
 msgid "©2012 FresoBrainz"
-msgstr ""
+msgstr "©2012 FresoBrainz"
 
 #: musicbottle/templates/header.html:2
 msgid "MusicBottle"
-msgstr ""
+msgstr "©2012 FresoBrainz"
 
 #: musicbottle/templates/index.html:4
 msgid "Welcome to MusicBottle"
-msgstr ""
+msgstr "Benvenuto in MusicBottle"
 
 #: musicbottle/templates/index.html:8
 msgid "Hello from The Bottle!"
