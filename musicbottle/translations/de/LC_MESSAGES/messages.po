@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: MusicBottle VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2013-05-06 22:43+0200\n"
-"PO-Revision-Date: 2020-10-22 02:26+0000\n"
+"PO-Revision-Date: 2020-12-10 04:29+0000\n"
 "Last-Translator: J. Lavoie <j.lavoie@net-c.ca>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/musicbottle/"
 "master/de/>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.3.1\n"
+"X-Generator: Weblate 4.4-dev\n"
 "Generated-By: Babel 0.9.6\n"
 
 #: musicbottle/templates/artist.html:5
@@ -84,7 +84,7 @@ msgstr "MusicBrainz-Veröffentlichung: %(title)s!"
 
 #: musicbottle/templates/release.html:22
 msgid "A Basic Bottled Release"
-msgstr ""
+msgstr "Eine grundlegende Veröffentlichung in Flaschen"
 
 #: musicbottle/templates/release.html:24
 #, python-format
