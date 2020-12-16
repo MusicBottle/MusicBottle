@@ -9,8 +9,8 @@ msgstr ""
 "Project-Id-Version: MusicBottle VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2013-05-06 22:43+0200\n"
-"PO-Revision-Date: 2020-11-10 13:28+0000\n"
-"Last-Translator: Ludovico Besana <ludovicobesanaguide@gmail.com>\n"
+"PO-Revision-Date: 2020-12-17 16:29+0000\n"
+"Last-Translator: Luca De Filippo <luca.defilippo@translationcommons.org>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/musicbottle/"
 "master/it/>\n"
 "Language: it\n"
@@ -24,12 +24,12 @@ msgstr ""
 #: musicbottle/templates/artist.html:5
 #, python-format
 msgid "MusicBrainz Artist: %(title)s"
-msgstr ""
+msgstr "Artista MusicBrainz: %(title)s"
 
 #: musicbottle/templates/artist.html:10
 #, python-format
 msgid "%(title)s %(disambiguation)s"
-msgstr ""
+msgstr "%(title)s - %(disambiguation)s"
 
 #: musicbottle/templates/artist.html:22
 msgid "Discography"
@@ -37,12 +37,12 @@ msgstr "Discografia"
 
 #: musicbottle/templates/artist.html:23
 msgid "to do: figure out what subpages we want"
-msgstr ""
+msgstr "da fare: Cercare quale pagine vogliamo"
 
 #: musicbottle/templates/artist.html:24
 #, python-format
 msgid "%(artist_name)s on MusicBrainz"
-msgstr ""
+msgstr "%(artist_name)s su MusicBrainz"
 
 #: musicbottle/templates/debug.html:2 musicbottle/templates/release.html:37
 msgid "Debug information"
@@ -50,12 +50,12 @@ msgstr "Informazioni di debug"
 
 #: musicbottle/templates/debug.html:3
 msgid "Dump as JSON data"
-msgstr ""
+msgstr "Scarica dati in JSON"
 
 #: musicbottle/templates/discography.html:4
 #, python-format
 msgid "MusicBottle: Discography for %(artist_name)s"
-msgstr ""
+msgstr "MusicBottle: Discografia di %(artist_name)s"
 
 #: musicbottle/templates/footer.html:2
 msgid "©2012 FresoBrainz"
@@ -63,7 +63,7 @@ msgstr "©2012 FresoBrainz"
 
 #: musicbottle/templates/header.html:2
 msgid "MusicBottle"
-msgstr "©2012 FresoBrainz"
+msgstr "MusicBottle"
 
 #: musicbottle/templates/index.html:4
 msgid "Welcome to MusicBottle"
@@ -71,11 +71,11 @@ msgstr "Benvenuto in MusicBottle"
 
 #: musicbottle/templates/index.html:8
 msgid "Hello from The Bottle!"
-msgstr ""
+msgstr "Ciao da The Bottle!"
 
 #: musicbottle/templates/index.html:9
 msgid "For testing purposes, here are a few artists:"
-msgstr ""
+msgstr "A scopo di test, ecco qualche artista:"
 
 #: musicbottle/templates/release.html:9
 #, python-format
@@ -89,21 +89,21 @@ msgstr ""
 #: musicbottle/templates/release.html:24
 #, python-format
 msgid "%(title)s —%(disambiguation)s"
-msgstr ""
+msgstr "%(title)s-%(disambiguation)s"
 
 #: musicbottle/templates/release.html:32
 #, python-format
 msgid "%(title)s Cover"
-msgstr ""
+msgstr "Copertina %(title)s"
 
 #: musicbottle/templates/release.html:34
 #, python-format
 msgid "Coming soon: lots of crap about %(title)s!"
-msgstr ""
+msgstr "In arrivo: un sacco di cose per %(title)s!"
 
 #: musicbottle/templates/release.html:38
 msgid "Dump as definition list"
-msgstr ""
+msgstr "Scarica come lista di definizione"
 
 #: musicbottle/templates/release.html:45
 msgid "Raw dump of release.data"
