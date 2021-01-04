@@ -10,7 +10,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2013-05-06 22:43+0200\n"
 "PO-Revision-Date: 2021-01-05 10:29+0000\n"
-"Last-Translator: Luca De Filippo <luca.defilippo@translationcommons.org>\n"
+"Last-Translator: Saverio Napolitano <savi.napolitano@gmail.com>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/musicbottle/"
 "master/it/>\n"
 "Language: it\n"
@@ -71,7 +71,7 @@ msgstr "Benvenuto in MusicBottle"
 
 #: musicbottle/templates/index.html:8
 msgid "Hello from The Bottle!"
-msgstr "Ciao da The Bottle!"
+msgstr "Saluti da The Bottle!"
 
 #: musicbottle/templates/index.html:9
 msgid "For testing purposes, here are a few artists:"
@@ -107,7 +107,7 @@ msgstr "Scarica come lista di definizione"
 
 #: musicbottle/templates/release.html:45
 msgid "Raw dump of release.data"
-msgstr ""
+msgstr "Dati RAW di release.data"
 
 #: musicbottle/templates/release.html:49
 msgid "©2012"
