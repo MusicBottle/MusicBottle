@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: MusicBottle VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2013-05-06 22:43+0200\n"
-"PO-Revision-Date: 2020-12-17 16:29+0000\n"
+"PO-Revision-Date: 2021-01-05 10:29+0000\n"
 "Last-Translator: Luca De Filippo <luca.defilippo@translationcommons.org>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/musicbottle/"
 "master/it/>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.4-dev\n"
+"X-Generator: Weblate 4.4.1-dev\n"
 "Generated-By: Babel 0.9.6\n"
 
 #: musicbottle/templates/artist.html:5
@@ -75,7 +75,7 @@ msgstr "Ciao da The Bottle!"
 
 #: musicbottle/templates/index.html:9
 msgid "For testing purposes, here are a few artists:"
-msgstr "A scopo di test, ecco qualche artista:"
+msgstr "Al fine di prova, ecco qualche artista:"
 
 #: musicbottle/templates/release.html:9
 #, python-format
@@ -111,4 +111,4 @@ msgstr ""
 
 #: musicbottle/templates/release.html:49
 msgid "©2012"
-msgstr ""
+msgstr "©2012"
