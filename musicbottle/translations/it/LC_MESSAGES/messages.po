@@ -9,8 +9,8 @@ msgstr ""
 "Project-Id-Version: MusicBottle VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2013-05-06 22:43+0200\n"
-"PO-Revision-Date: 2021-01-05 10:29+0000\n"
-"Last-Translator: Saverio Napolitano <savi.napolitano@gmail.com>\n"
+"PO-Revision-Date: 2021-01-09 11:32+0000\n"
+"Last-Translator: Luca De Filippo <luca.defilippo@translationcommons.org>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/musicbottle/"
 "master/it/>\n"
 "Language: it\n"
@@ -80,7 +80,7 @@ msgstr "Al fine di prova, ecco qualche artista:"
 #: musicbottle/templates/release.html:9
 #, python-format
 msgid "MusicBrainz Release: %(title)s!"
-msgstr ""
+msgstr "MusicBrainz Release: %(title)s!"
 
 #: musicbottle/templates/release.html:22
 msgid "A Basic Bottled Release"
