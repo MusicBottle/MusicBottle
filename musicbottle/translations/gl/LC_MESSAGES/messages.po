@@ -1,0 +1,111 @@
+# Translations template for MusicBottle.
+# Copyright (C) 2013 MusicBottle contributors
+# This file is distributed under the same license as the MusicBottle
+# project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2013.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: MusicBottle VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2013-05-06 22:43+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: gl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 0.9.6\n"
+
+#: musicbottle/templates/artist.html:5
+#, python-format
+msgid "MusicBrainz Artist: %(title)s"
+msgstr ""
+
+#: musicbottle/templates/artist.html:10
+#, python-format
+msgid "%(title)s %(disambiguation)s"
+msgstr ""
+
+#: musicbottle/templates/artist.html:22
+msgid "Discography"
+msgstr ""
+
+#: musicbottle/templates/artist.html:23
+msgid "to do: figure out what subpages we want"
+msgstr ""
+
+#: musicbottle/templates/artist.html:24
+#, python-format
+msgid "%(artist_name)s on MusicBrainz"
+msgstr ""
+
+#: musicbottle/templates/debug.html:2 musicbottle/templates/release.html:37
+msgid "Debug information"
+msgstr ""
+
+#: musicbottle/templates/debug.html:3
+msgid "Dump as JSON data"
+msgstr ""
+
+#: musicbottle/templates/discography.html:4
+#, python-format
+msgid "MusicBottle: Discography for %(artist_name)s"
+msgstr ""
+
+#: musicbottle/templates/footer.html:2
+msgid "©2012 FresoBrainz"
+msgstr ""
+
+#: musicbottle/templates/header.html:2
+msgid "MusicBottle"
+msgstr ""
+
+#: musicbottle/templates/index.html:4
+msgid "Welcome to MusicBottle"
+msgstr ""
+
+#: musicbottle/templates/index.html:8
+msgid "Hello from The Bottle!"
+msgstr ""
+
+#: musicbottle/templates/index.html:9
+msgid "For testing purposes, here are a few artists:"
+msgstr ""
+
+#: musicbottle/templates/release.html:9
+#, python-format
+msgid "MusicBrainz Release: %(title)s!"
+msgstr ""
+
+#: musicbottle/templates/release.html:22
+msgid "A Basic Bottled Release"
+msgstr ""
+
+#: musicbottle/templates/release.html:24
+#, python-format
+msgid "%(title)s —%(disambiguation)s"
+msgstr ""
+
+#: musicbottle/templates/release.html:32
+#, python-format
+msgid "%(title)s Cover"
+msgstr ""
+
+#: musicbottle/templates/release.html:34
+#, python-format
+msgid "Coming soon: lots of crap about %(title)s!"
+msgstr ""
+
+#: musicbottle/templates/release.html:38
+msgid "Dump as definition list"
+msgstr ""
+
+#: musicbottle/templates/release.html:45
+msgid "Raw dump of release.data"
+msgstr ""
+
+#: musicbottle/templates/release.html:49
+msgid "©2012"
+msgstr ""
