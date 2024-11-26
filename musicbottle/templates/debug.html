@@ -1,4 +1,26 @@
 {# included in artist.html #}
-        <h3>{{ _('Debug information') }}</h3>
-        <h4>{{ _('Dump as JSON data') }}</h4>
+        <h3 id="debug">{{ _('Debug information') }}</h3>
+        <h4 id="debug-json">{{ _('Dump as JSON data') }}</h4>
         <pre>{{artist.debug_json}}</pre>
+        <h4 id="debug-dl">{{ _('Dump as a definition list') }}</h4>
+        <dl>
+        {% for key, value in artist.data.items() recursive %}
+            {%- set mainloop = loop -%}
+            <dt>{{ key }}</dt>
+            {% if value is string %}
+                <dd>{{ value }}</dd>
+            {% elif value is mapping %}
+                <dd><dl>{{ loop(value.items()) }}</dl></dd>
+            {% elif value is iterable %}
+                {%- for item in value -%}
+                    <dd>
+                    {%- if item is string -%}
+                        {{ item }}
+                    {%- else -%}
+                        <dl>{{ mainloop(item.items()) }}</dl>
+                    {%- endif -%}
+                    </dd>
+                {%- endfor -%}
+            {% endif %}
+        {% endfor %}
+        </dl>
