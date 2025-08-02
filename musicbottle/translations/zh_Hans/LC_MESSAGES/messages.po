@@ -9,13 +9,16 @@ msgstr ""
 "Project-Id-Version: MusicBottle VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2013-05-06 22:43+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2025-08-03 07:02+0000\n"
+"Last-Translator: Cassian <prismarine@epicraft.top>\n"
+"Language-Team: Chinese (Simplified Han script) <https://hosted.weblate.org/"
+"projects/musicbottle/master/zh_Hans/>\n"
 "Language: zh_Hans\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 5.13-dev\n"
 "Generated-By: Babel 0.9.6\n"
 
 #: musicbottle/templates/artist.html:5
@@ -43,11 +46,11 @@ msgstr ""
 
 #: musicbottle/templates/debug.html:2 musicbottle/templates/release.html:37
 msgid "Debug information"
-msgstr ""
+msgstr "调试信息"
 
 #: musicbottle/templates/debug.html:3
 msgid "Dump as JSON data"
-msgstr ""
+msgstr "以 JSON 数据转储"
 
 #: musicbottle/templates/discography.html:4
 #, python-format
@@ -64,7 +67,7 @@ msgstr ""
 
 #: musicbottle/templates/index.html:4
 msgid "Welcome to MusicBottle"
-msgstr ""
+msgstr "欢迎来到 MusicBottle"
 
 #: musicbottle/templates/index.html:8
 msgid "Hello from The Bottle!"
