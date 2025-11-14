@@ -9,14 +9,16 @@ msgstr ""
 "Project-Id-Version: MusicBottle VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2013-05-06 22:43+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2025-11-15 15:51+0000\n"
+"Last-Translator: ButterflyOfFire <boffire@users.noreply.hosted.weblate.org>\n"
+"Language-Team: Kabyle <https://hosted.weblate.org/projects/musicbottle/"
+"master/kab/>\n"
 "Language: kab\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: Weblate 5.15-dev\n"
 "Generated-By: Babel 0.9.6\n"
 
 #: musicbottle/templates/artist.html:5
@@ -27,7 +29,7 @@ msgstr ""
 #: musicbottle/templates/artist.html:10
 #, python-format
 msgid "%(title)s %(disambiguation)s"
-msgstr ""
+msgstr "%(title)s %(disambiguation)s"
 
 #: musicbottle/templates/artist.html:22
 msgid "Discography"
@@ -61,7 +63,7 @@ msgstr ""
 
 #: musicbottle/templates/header.html:2
 msgid "MusicBottle"
-msgstr ""
+msgstr "MusicBottle"
 
 #: musicbottle/templates/index.html:4
 msgid "Welcome to MusicBottle"
@@ -109,4 +111,4 @@ msgstr ""
 
 #: musicbottle/templates/release.html:49
 msgid "©2012"
-msgstr ""
+msgstr "©2012"
